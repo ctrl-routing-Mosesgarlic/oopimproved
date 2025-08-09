@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.TestDashboardController">
+    <center>
+        <VBox>
+            <Label fx:id="welcomeLabel" text="Welcome to Test Dashboard"/>
+            <Label fx:id="totalLabel" text="$0.00"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.CustomerDashboardController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, Customer" styleClass="header-label">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="serverInfoLabel" text="Connected to: Headquarters (HQ)" />
+                <Button fx:id="logoutButton" text="Logout" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Drinks Catalog">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Available Drinks" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="refreshDrinksButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="drinksTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="drinkNameColumn" text="Name" />
+                            <TableColumn fx:id="drinkPriceColumn" text="Price" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Branch:" />
+                        <ComboBox fx:id="branchComboBox" promptText="Select Branch" />
+                        <Label text="Quantity:" />
+                        <Spinner fx:id="quantitySpinner" editable="true" />
+                        <Button fx:id="addToCartButton" text="Add to Cart" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Shopping Cart">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Your Cart" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="clearCartButton" text="Clear Cart" />
+                    </HBox>
+                    <ListView fx:id="cartListView" VBox.vgrow="ALWAYS" />
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Label text="Total: " />
+                        <Label fx:id="totalLabel" text="0.00" />
+                    </HBox>
+                    <Button fx:id="placeOrderButton" text="Place Order" maxWidth="Infinity" />
+                </VBox>
+            </Tab>
+            
+            <Tab text="Order History">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Your Orders" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="refreshOrdersButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="orderIdColumn" text="Order ID" />
+                            <TableColumn fx:id="orderDateColumn" text="Date" />
+                            <TableColumn fx:id="orderBranchColumn" text="Branch" />
+                            <TableColumn fx:id="orderTotalColumn" text="Total" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Notifications">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Your Notifications" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    <ListView fx:id="notificationsListView" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ProgressIndicator fx:id="progressIndicator" visible="false" />
+        </HBox>
+    </bottom>
+</BorderPane>

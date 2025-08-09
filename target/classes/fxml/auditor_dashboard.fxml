@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.AuditorDashboardController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, Auditor" styleClass="header-label">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="serverInfoLabel" text="Connected to: Headquarters (HQ)" />
+                <Button fx:id="logoutButton" text="Logout" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Financial Reports">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Financial Overview" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="financialReportTypeComboBox" promptText="Report Type" />
+                        <DatePicker fx:id="financialStartDatePicker" promptText="Start Date" />
+                        <DatePicker fx:id="financialEndDatePicker" promptText="End Date" />
+                        <Button fx:id="generateFinancialReportButton" text="Generate Report" />
+                    </HBox>
+                    <TableView fx:id="financialReportTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="financialBranchColumn" text="Branch" />
+                            <TableColumn fx:id="financialPeriodColumn" text="Period" />
+                            <TableColumn fx:id="financialRevenueColumn" text="Revenue" />
+                            <TableColumn fx:id="financialCostColumn" text="Cost" />
+                            <TableColumn fx:id="financialProfitColumn" text="Profit" />
+                            <TableColumn fx:id="financialGrowthColumn" text="Growth %" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button fx:id="exportFinancialReportButton" text="Export to CSV" />
+                        <Button fx:id="printFinancialReportButton" text="Print Report" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Sales Analysis">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Sales Performance" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="salesAnalysisTypeComboBox" promptText="Analysis Type" />
+                        <ComboBox fx:id="salesBranchFilterComboBox" promptText="Branch Filter" />
+                        <Button fx:id="updateSalesChartButton" text="Update" />
+                    </HBox>
+                    <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
+                        <BarChart fx:id="salesBarChart" legendVisible="true">
+                            <xAxis>
+                                <CategoryAxis fx:id="salesXAxis" label="Period" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="salesYAxis" label="Amount" />
+                            </yAxis>
+                        </BarChart>
+                        <PieChart fx:id="salesPieChart" legendVisible="true" />
+                    </SplitPane>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Inventory Audit">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Inventory Audit" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="inventoryBranchComboBox" promptText="Select Branch" />
+                        <Button fx:id="auditInventoryButton" text="Run Audit" />
+                    </HBox>
+                    <TableView fx:id="inventoryAuditTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="auditBranchColumn" text="Branch" />
+                            <TableColumn fx:id="auditDrinkColumn" text="Drink" />
+                            <TableColumn fx:id="auditRecordedColumn" text="Recorded Qty" />
+                            <TableColumn fx:id="auditActualColumn" text="Actual Qty" />
+                            <TableColumn fx:id="auditDiscrepancyColumn" text="Discrepancy" />
+                            <TableColumn fx:id="auditValueColumn" text="Value Diff" />
+                            <TableColumn fx:id="auditFlagColumn" text="Flag" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button fx:id="exportAuditButton" text="Export Audit" />
+                        <Button fx:id="flagDiscrepanciesButton" text="Flag Discrepancies" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="System Logs">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="System Activity Logs" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="logTypeComboBox" promptText="Log Type" />
+                        <ComboBox fx:id="logSeverityComboBox" promptText="Severity" />
+                        <DatePicker fx:id="logDatePicker" promptText="Date" />
+                        <Button fx:id="refreshLogsButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="systemLogsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="logTimestampColumn" text="Timestamp" />
+                            <TableColumn fx:id="logUserColumn" text="User" />
+                            <TableColumn fx:id="logActionColumn" text="Action" />
+                            <TableColumn fx:id="logDetailsColumn" text="Details" />
+                            <TableColumn fx:id="logSeverityColumn" text="Severity" />
+                            <TableColumn fx:id="logSourceColumn" text="Source" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button fx:id="exportLogsButton" text="Export Logs" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Report Generation">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Custom Reports" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Report Type:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <ComboBox fx:id="reportTypeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        
+                        <Label text="Time Period:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <DatePicker fx:id="reportStartDatePicker" promptText="Start Date" />
+                            <DatePicker fx:id="reportEndDatePicker" promptText="End Date" />
+                        </HBox>
+                        
+                        <Label text="Branches:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="reportBranchComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        
+                        <Label text="Format:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="reportFormatComboBox" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        
+                        <Button fx:id="generateReportButton" text="Generate Report" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    </GridPane>
+                    <Separator />
+                    <Label text="Generated Reports:" />
+                    <ListView fx:id="generatedReportsListView" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ProgressIndicator fx:id="progressIndicator" visible="false" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.BranchManagerDashboardController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, Branch Manager" styleClass="header-label">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="serverInfoLabel" text="Connected to: Branch Server" />
+                <Button fx:id="logoutButton" text="Logout" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Staff Management">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Staff Management" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="addStaffButton" text="Add Staff" />
+                        <Button fx:id="refreshStaffButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="staffTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="staffIdColumn" text="ID" />
+                            <TableColumn fx:id="staffNameColumn" text="Name" />
+                            <TableColumn fx:id="staffUsernameColumn" text="Username" />
+                            <TableColumn fx:id="staffRoleColumn" text="Role" />
+                            <TableColumn fx:id="staffStatusColumn" text="Status" />
+                            <TableColumn fx:id="staffActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Inventory">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Branch Inventory" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="inventorySearchField" promptText="Search drinks..." />
+                        <Button fx:id="refreshInventoryButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="inventoryTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="drinkIdColumn" text="ID" />
+                            <TableColumn fx:id="drinkNameColumn" text="Name" />
+                            <TableColumn fx:id="drinkPriceColumn" text="Price" />
+                            <TableColumn fx:id="stockQuantityColumn" text="Quantity" />
+                            <TableColumn fx:id="stockValueColumn" text="Value" />
+                            <TableColumn fx:id="stockActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Update Stock:" />
+                        <ComboBox fx:id="drinkComboBox" promptText="Select Drink" />
+                        <Spinner fx:id="quantitySpinner" editable="true" />
+                        <Button fx:id="updateStockButton" text="Update Stock" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Orders">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Branch Orders" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="orderStatusFilter" promptText="Filter by Status" />
+                        <Button fx:id="refreshOrdersButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="orderIdColumn" text="ID" />
+                            <TableColumn fx:id="orderCustomerColumn" text="Customer" />
+                            <TableColumn fx:id="orderDateColumn" text="Date" />
+                            <TableColumn fx:id="orderItemsColumn" text="Items" />
+                            <TableColumn fx:id="orderTotalColumn" text="Total" />
+                            <TableColumn fx:id="orderStatusColumn" text="Status" />
+                            <TableColumn fx:id="orderActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Sales">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Sales Overview" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <DatePicker fx:id="startDatePicker" promptText="Start Date" />
+                        <DatePicker fx:id="endDatePicker" promptText="End Date" />
+                        <Button fx:id="updateChartButton" text="Update" />
+                    </HBox>
+                    <BarChart fx:id="salesChart" legendVisible="true" VBox.vgrow="ALWAYS">
+                        <xAxis>
+                            <CategoryAxis fx:id="xAxis" label="Date" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="yAxis" label="Amount" />
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Communication">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="HQ Communication" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    <ListView fx:id="notificationListView" VBox.vgrow="ALWAYS" />
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <ComboBox fx:id="messageTypeComboBox" promptText="Message Type" />
+                        <TextField fx:id="messageField" promptText="Enter message..." HBox.hgrow="ALWAYS" />
+                        <Button fx:id="sendMessageButton" text="Send to HQ" />
+                    </HBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ProgressIndicator fx:id="progressIndicator" visible="false" />
+        </HBox>
+    </bottom>
+</BorderPane>

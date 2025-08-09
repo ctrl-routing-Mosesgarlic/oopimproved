@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.drinks.rmi.client.gui.controller.CustomerDashboardController" 
+      stylesheets="@../css/dashboard.css">
+   
+   <!-- Header -->
+   <top>
+      <VBox styleClass="header-container">
+         <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <padding>
+               <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+            
+            <Label fx:id="welcomeLabel" styleClass="welcome-label" text="Welcome, Customer">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            
+            <Region HBox.hgrow="ALWAYS" />
+            
+            <Label fx:id="serverInfoLabel" styleClass="server-info-label" text="Connected to: HQ Server" />
+            
+            <Button fx:id="logoutButton" styleClass="logout-button" text="Logout" />
+         </HBox>
+      </VBox>
+   </top>
+   
+   <!-- Main Content -->
+   <center>
+      <TabPane styleClass="main-tabs" tabClosingPolicy="UNAVAILABLE">
+         
+         <!-- Browse Drinks Tab -->
+         <Tab text="Browse Drinks">
+            <VBox spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <!-- Drinks Catalog -->
+               <VBox spacing="10.0">
+                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                     <Label styleClass="section-title" text="Available Drinks">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                     
+                     <Region HBox.hgrow="ALWAYS" />
+                     
+                     <Button fx:id="refreshDrinksButton" styleClass="secondary-button" text="Refresh" />
+                  </HBox>
+                  
+                  <TableView fx:id="drinksTable" prefHeight="250.0">
+                     <columns>
+                        <TableColumn fx:id="drinkNameColumn" prefWidth="300.0" text="Drink Name" />
+                        <TableColumn fx:id="drinkPriceColumn" prefWidth="120.0" text="Price ($)" />
+                     </columns>
+                  </TableView>
+               </VBox>
+               
+               <!-- Order Form -->
+               <VBox spacing="10.0" styleClass="form-container">
+                  <Label styleClass="section-title" text="Place Order">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  
+                  <HBox spacing="15.0" alignment="CENTER_LEFT">
+                     <VBox spacing="5.0">
+                        <Label text="Branch:" />
+                        <ComboBox fx:id="branchComboBox" prefWidth="120.0" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0">
+                        <Label text="Quantity:" />
+                        <Spinner fx:id="quantitySpinner" prefWidth="80.0" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0" alignment="BOTTOM_LEFT">
+                        <Button fx:id="addToCartButton" styleClass="primary-button" text="Add to Cart" disable="true" />
+                     </VBox>
+                  </HBox>
+               </VBox>
+               
+               <!-- Shopping Cart -->
+               <VBox spacing="10.0" styleClass="form-container">
+                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                     <Label styleClass="section-title" text="Shopping Cart">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font>
+                     </Label>
+                     
+                     <Region HBox.hgrow="ALWAYS" />
+                     
+                     <Label fx:id="totalLabel" styleClass="section-title" text="Total: $0.00">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font>
+                     </Label>
+                  </HBox>
+                  
+                  <ListView fx:id="cartListView" prefHeight="120.0" />
+                  
+                  <HBox spacing="10.0" alignment="CENTER_RIGHT">
+                     <Button fx:id="clearCartButton" styleClass="secondary-button" text="Clear Cart" disable="true" />
+                     <Button fx:id="placeOrderButton" styleClass="primary-button" text="Place Order" disable="true" />
+                  </HBox>
+               </VBox>
+            </VBox>
+         </Tab>
+         
+         <!-- Order History Tab -->
+         <Tab text="My Orders">
+            <VBox spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <!-- Orders Table -->
+               <VBox spacing="10.0">
+                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                     <Label styleClass="section-title" text="Order History">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                     
+                     <Region HBox.hgrow="ALWAYS" />
+                     
+                     <Button fx:id="refreshOrdersButton" styleClass="secondary-button" text="Refresh" />
+                  </HBox>
+                  
+                  <TableView fx:id="ordersTable" prefHeight="400.0">
+                     <columns>
+                        <TableColumn fx:id="orderIdColumn" prefWidth="80.0" text="Order ID" />
+                        <TableColumn fx:id="orderDateColumn" prefWidth="150.0" text="Date" />
+                        <TableColumn fx:id="orderBranchColumn" prefWidth="120.0" text="Branch" />
+                        <TableColumn fx:id="orderTotalColumn" prefWidth="100.0" text="Total ($)" />
+                     </columns>
+                  </TableView>
+               </VBox>
+            </VBox>
+         </Tab>
+      </TabPane>
+   </center>
+   
+   <!-- Footer -->
+   <bottom>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="footer-container">
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+         
+         <Label fx:id="statusLabel" styleClass="status-label" text="Ready" />
+         
+         <Region HBox.hgrow="ALWAYS" />
+         
+         <ProgressIndicator fx:id="progressIndicator" maxHeight="20.0" maxWidth="20.0" />
+         
+         <Label styleClass="footer-label" text="Drink Business RMI System - Customer Portal" />
+      </HBox>
+   </bottom>
+</BorderPane>

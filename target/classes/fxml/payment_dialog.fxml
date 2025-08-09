@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.drinks.rmi.client.gui.controller.PaymentDialogController"
+      spacing="15" alignment="CENTER" styleClass="payment-dialog"
+      prefWidth="500" prefHeight="600">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Payment Checkout" styleClass="header-label">
+        <font>
+            <Font name="System Bold" size="24.0"/>
+        </font>
+    </Label>
+    
+    <Separator/>
+    
+    <!-- Order Summary Section -->
+    <VBox spacing="10" styleClass="order-summary">
+        <Label text="Order Summary" styleClass="section-header">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+        
+        <GridPane hgap="10" vgap="5">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            
+            <Label text="Order ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label fx:id="orderIdLabel" text="[Order ID]" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            
+            <Label text="Branch:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label fx:id="branchLabel" text="[Branch]" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            
+            <Label text="Items:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="itemCountLabel" text="[Item Count]" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            
+            <Label text="Total Amount:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <Label fx:id="totalAmountLabel" text="[Total Amount]" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="total-amount"/>
+        </GridPane>
+    </VBox>
+    
+    <Separator/>
+    
+    <!-- Payment Method Section -->
+    <VBox spacing="10" styleClass="payment-method">
+        <Label text="Payment Method" styleClass="section-header">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+        
+        <RadioButton fx:id="cardPaymentRadio" text="Credit/Debit Card" selected="true">
+            <toggleGroup>
+                <ToggleGroup fx:id="paymentMethodGroup"/>
+            </toggleGroup>
+        </RadioButton>
+        
+        <RadioButton fx:id="mobileMoneyRadio" text="Mobile Money" toggleGroup="$paymentMethodGroup"/>
+    </VBox>
+    
+    <!-- Card Payment Details -->
+    <VBox fx:id="cardDetailsPane" spacing="10" styleClass="payment-details">
+        <Label text="Card Details" styleClass="subsection-header">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0"/>
+            </columnConstraints>
+            
+            <Label text="Card Number:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="cardNumberField" promptText="1234 5678 9012 3456" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            
+            <Label text="Cardholder Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="cardholderNameField" promptText="John Doe" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            
+            <Label text="Expiry Date:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <HBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                <ComboBox fx:id="expiryMonthCombo" prefWidth="80"/>
+                <ComboBox fx:id="expiryYearCombo" prefWidth="100"/>
+            </HBox>
+            
+            <Label text="CVV:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="cvvField" prefWidth="80" promptText="123" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+        
+        <Label text="For testing, use these card numbers:" styleClass="helper-text"/>
+        <Label text="4242 4242 4242 4242 - Payment Success" styleClass="helper-text"/>
+        <Label text="4000 0000 0000 0002 - Payment Declined" styleClass="helper-text"/>
+    </VBox>
+    
+    <!-- Mobile Money Details -->
+    <VBox fx:id="mobileMoneyPane" spacing="10" styleClass="payment-details" visible="false" managed="false">
+        <Label text="Mobile Money Details" styleClass="subsection-header">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0"/>
+            </columnConstraints>
+            
+            <Label text="Phone Number:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="phoneNumberField" promptText="+254 712 345 678" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        </GridPane>
+        
+        <Label text="For testing, use these phone numbers:" styleClass="helper-text"/>
+        <Label text="+254 712 345 678 - Payment Success" styleClass="helper-text"/>
+        <Label text="+254 700 000 002 - Payment Declined" styleClass="helper-text"/>
+    </VBox>
+    
+    <Separator/>
+    
+    <!-- Payment Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel" styleClass="cancel-button"/>
+        <Button fx:id="payButton" text="Pay Now" onAction="#handlePayment" styleClass="pay-button" defaultButton="true"/>
+    </HBox>
+    
+    <!-- Payment Processing Indicator -->
+    <StackPane fx:id="processingPane" visible="false" managed="false" styleClass="processing-pane">
+        <VBox alignment="CENTER" spacing="15">
+            <ProgressIndicator/>
+            <Label text="Processing Payment..." styleClass="processing-text"/>
+        </VBox>
+    </StackPane>
+</VBox>

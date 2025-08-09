@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.AdminDashboardController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, Administrator" styleClass="header-label">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="serverInfoLabel" text="Connected to: Headquarters (HQ)" />
+                <Button fx:id="logoutButton" text="Logout" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Dashboard">
+                <VBox spacing="20">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="20" alignment="CENTER">
+                        <VBox styleClass="dashboard-card" spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="Total Users" styleClass="card-title" />
+                            <Label fx:id="totalUsersLabel" text="0" styleClass="card-value" />
+                        </VBox>
+                        <VBox styleClass="dashboard-card" spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="Total Drinks" styleClass="card-title" />
+                            <Label fx:id="totalDrinksLabel" text="0" styleClass="card-value" />
+                        </VBox>
+                        <VBox styleClass="dashboard-card" spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="Total Orders" styleClass="card-title" />
+                            <Label fx:id="totalOrdersLabel" text="0" styleClass="card-value" />
+                        </VBox>
+                        <VBox styleClass="dashboard-card" spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="Total Revenue" styleClass="card-title" />
+                            <Label fx:id="totalRevenueLabel" text="$0.00" styleClass="card-value" />
+                        </VBox>
+                    </HBox>
+                    
+                    <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
+                        <BarChart fx:id="salesChart" legendVisible="true" title="Sales by Branch">
+                            <xAxis>
+                                <CategoryAxis fx:id="salesXAxis" label="Branch" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="salesYAxis" label="Amount" />
+                            </yAxis>
+                        </BarChart>
+                        <PieChart fx:id="drinkPopularityChart" legendVisible="true" title="Popular Drinks" />
+                    </SplitPane>
+                </VBox>
+            </Tab>
+            
+            <Tab text="User Management">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="System Users" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="userSearchField" promptText="Search users..." />
+                        <ComboBox fx:id="userRoleFilter" promptText="Filter by Role" />
+                        <Button fx:id="refreshUsersButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="userIdColumn" text="ID" />
+                            <TableColumn fx:id="userNameColumn" text="Name" />
+                            <TableColumn fx:id="userUsernameColumn" text="Username" />
+                            <TableColumn fx:id="userEmailColumn" text="Email" />
+                            <TableColumn fx:id="userRoleColumn" text="Role" />
+                            <TableColumn fx:id="userStatusColumn" text="Status" />
+                            <TableColumn fx:id="userActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button fx:id="addUserButton" text="Add User" />
+                        <Button fx:id="editUserButton" text="Edit Selected" />
+                        <Button fx:id="deleteUserButton" text="Delete Selected" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Drink Management">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Drink Catalog" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="drinkSearchField" promptText="Search drinks..." />
+                        <Button fx:id="refreshDrinksButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="drinksTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="drinkIdColumn" text="ID" />
+                            <TableColumn fx:id="drinkNameColumn" text="Name" />
+                            <TableColumn fx:id="drinkDescriptionColumn" text="Description" />
+                            <TableColumn fx:id="drinkPriceColumn" text="Price" />
+                            <TableColumn fx:id="drinkCategoryColumn" text="Category" />
+                            <TableColumn fx:id="drinkActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button fx:id="addDrinkButton" text="Add Drink" />
+                        <Button fx:id="editDrinkButton" text="Edit Selected" />
+                        <Button fx:id="deleteDrinkButton" text="Delete Selected" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Branch Management">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Branch Offices" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="refreshBranchesButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="branchesTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="branchNameColumn" text="Name" />
+                            <TableColumn fx:id="branchLocationColumn" text="Location" />
+                            <TableColumn fx:id="branchManagerColumn" text="Manager" />
+                            <TableColumn fx:id="branchStaffCountColumn" text="Staff" />
+                            <TableColumn fx:id="branchStatusColumn" text="Status" />
+                            <TableColumn fx:id="branchActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button fx:id="addBranchButton" text="Add Branch" />
+                        <Button fx:id="editBranchButton" text="Edit Selected" />
+                        <Button fx:id="viewBranchDetailsButton" text="View Details" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Payment Records">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Payment Records" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="paymentSearchField" promptText="Search by order ID..." />
+                        <ComboBox fx:id="paymentStatusFilter" promptText="Filter by Status" />
+                        <Button fx:id="refreshPaymentsButton" text="Refresh" />
+                    </HBox>
+                    
+                    <TableView fx:id="paymentsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="paymentIdColumn" text="ID" prefWidth="60" />
+                            <TableColumn fx:id="paymentOrderIdColumn" text="Order ID" prefWidth="80" />
+                            <TableColumn fx:id="paymentCustomerIdColumn" text="Customer ID" prefWidth="100" />
+                            <TableColumn fx:id="paymentAmountColumn" text="Amount" prefWidth="100" />
+                            <TableColumn fx:id="paymentMethodColumn" text="Method" prefWidth="120" />
+                            <TableColumn fx:id="paymentTransactionIdColumn" text="Transaction ID" prefWidth="150" />
+                            <TableColumn fx:id="paymentStatusColumn" text="Status" prefWidth="100" />
+                            <TableColumn fx:id="paymentDateColumn" text="Date" prefWidth="150" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="System Settings">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <Label text="System Configuration" styleClass="section-header">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                    <Separator />
+                    
+                    <TitledPane text="Server Settings" expanded="true">
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="HQ Server Port:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="hqPortField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            
+                            <Label text="Load Balancing:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <CheckBox fx:id="loadBalancingCheckbox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            
+                            <Label text="Notification Service:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <CheckBox fx:id="notificationServiceCheckbox" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            
+                            <Button fx:id="saveServerSettingsButton" text="Save Server Settings" 
+                                    GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        </GridPane>
+                    </TitledPane>
+                    
+                    <TitledPane text="Database Settings" expanded="true">
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="Database URL:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="dbUrlField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            
+                            <Label text="Database User:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <TextField fx:id="dbUserField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            
+                            <Label text="Database Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <PasswordField fx:id="dbPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            
+                            <Button fx:id="testConnectionButton" text="Test Connection" 
+                                    GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <Button fx:id="saveDatabaseSettingsButton" text="Save Database Settings" 
+                                    GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        </GridPane>
+                    </TitledPane>
+                    
+                    <TitledPane text="System Maintenance" expanded="true">
+                        <VBox spacing="10">
+                            <Button fx:id="backupDatabaseButton" text="Backup Database" maxWidth="Infinity" />
+                            <Button fx:id="restoreDatabaseButton" text="Restore Database" maxWidth="Infinity" />
+                            <Button fx:id="clearCacheButton" text="Clear System Cache" maxWidth="Infinity" />
+                            <Button fx:id="restartServicesButton" text="Restart Services" maxWidth="Infinity" />
+                        </VBox>
+                    </TitledPane>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ProgressIndicator fx:id="progressIndicator" visible="false" />
+        </HBox>
+    </bottom>
+</BorderPane>

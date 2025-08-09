@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drinks.rmi.client.gui.controller.LoginController" stylesheets="@../css/login.css">
+   <center>
+      <VBox fx:id="loginForm" alignment="CENTER" maxWidth="400.0" spacing="20.0" styleClass="login-container">
+         <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+         </padding>
+         
+         <!-- Title -->
+         <Label styleClass="login-title" text="Drink Business RMI System">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         
+         <!-- Subtitle -->
+         <Label styleClass="login-subtitle" text="Please sign in to continue">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         
+         <!-- Server Selection -->
+         <VBox spacing="8.0">
+            <Label text="Server Type:" />
+            <ComboBox fx:id="serverComboBox" maxWidth="1.7976931348623157E308" />
+         </VBox>
+         
+         <!-- Branch Selection -->
+         <VBox spacing="8.0">
+            <Label text="Branch:" />
+            <ComboBox fx:id="branchComboBox" maxWidth="1.7976931348623157E308" />
+         </VBox>
+         
+         <!-- Username Field -->
+         <VBox spacing="8.0">
+            <Label text="Username:" />
+            <TextField fx:id="usernameField" promptText="Enter your username" styleClass="login-field" />
+         </VBox>
+         
+         <!-- Password Field -->
+         <VBox spacing="8.0">
+            <Label text="Password:" />
+            <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="login-field" />
+         </VBox>
+         
+         <!-- Login Button -->
+         <Button fx:id="loginButton" maxWidth="1.7976931348623157E308" styleClass="login-button" text="Sign In">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+         
+         <!-- Progress Indicator -->
+         <ProgressIndicator fx:id="progressIndicator" maxHeight="30.0" maxWidth="30.0" />
+         
+         <!-- Status Label -->
+         <Label fx:id="statusLabel" styleClass="status-label" text="Please enter your credentials" wrapText="true" />
+         
+         <!-- Sample Users Info -->
+         <Separator />
+         <Label styleClass="info-label" text="Sample Users:" />
+         <Label styleClass="sample-users" text="Admin: admin / password123&#10;Customer: john_doe / password123&#10;Branch Manager: branch_mgr_nakuru / password123" wrapText="true">
+            <font>
+               <Font size="11.0" />
+            </font>
+         </Label>
+      </VBox>
+   </center>
+   
+   <!-- Footer -->
+   <bottom>
+      <Label text="© 2024 Drink Business RMI System - Educational Project" styleClass="footer-label">
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </bottom>
+</BorderPane>

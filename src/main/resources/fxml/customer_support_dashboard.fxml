@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.CustomerSupportDashboardController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, Customer Support" styleClass="header-label">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="serverInfoLabel" text="Connected to: Headquarters (HQ)" />
+                <Button fx:id="logoutButton" text="Logout" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Customer Management">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Customer Accounts" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="customerSearchField" promptText="Search customers..." />
+                        <Button fx:id="refreshCustomersButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="customersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="customerIdColumn" text="ID" />
+                            <TableColumn fx:id="customerNameColumn" text="Name" />
+                            <TableColumn fx:id="customerEmailColumn" text="Email" />
+                            <TableColumn fx:id="customerPhoneColumn" text="Phone" />
+                            <TableColumn fx:id="customerJoinDateColumn" text="Join Date" />
+                            <TableColumn fx:id="customerOrdersColumn" text="Orders" />
+                            <TableColumn fx:id="customerActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button fx:id="addCustomerButton" text="Add Customer" />
+                        <Button fx:id="editCustomerButton" text="Edit Selected" />
+                        <Button fx:id="viewCustomerDetailsButton" text="View Details" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Order Issues">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Problem Orders" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="issueTypeComboBox" promptText="Filter by Issue" />
+                        <Button fx:id="refreshIssuesButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="issuesTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="issueIdColumn" text="ID" />
+                            <TableColumn fx:id="issueOrderIdColumn" text="Order ID" />
+                            <TableColumn fx:id="issueCustomerColumn" text="Customer" />
+                            <TableColumn fx:id="issueDateColumn" text="Date" />
+                            <TableColumn fx:id="issueTypeColumn" text="Issue Type" />
+                            <TableColumn fx:id="issueStatusColumn" text="Status" />
+                            <TableColumn fx:id="issueActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Order Details">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Order History" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="orderSearchField" promptText="Search by Order ID or Customer" />
+                        <Button fx:id="searchOrderButton" text="Search" />
+                    </HBox>
+                    <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="orderIdColumn" text="ID" />
+                            <TableColumn fx:id="orderCustomerColumn" text="Customer" />
+                            <TableColumn fx:id="orderBranchColumn" text="Branch" />
+                            <TableColumn fx:id="orderDateColumn" text="Date" />
+                            <TableColumn fx:id="orderItemsColumn" text="Items" />
+                            <TableColumn fx:id="orderTotalColumn" text="Total" />
+                            <TableColumn fx:id="orderStatusColumn" text="Status" />
+                            <TableColumn fx:id="orderActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Customer Communication">
+                <SplitPane dividerPositions="0.3" orientation="HORIZONTAL">
+                    <VBox spacing="10">
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Customers" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <TextField fx:id="customerChatSearchField" promptText="Search..." />
+                        </HBox>
+                        <ListView fx:id="customerListView" VBox.vgrow="ALWAYS" />
+                    </VBox>
+                    
+                    <VBox spacing="10">
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+                        <Label fx:id="selectedCustomerLabel" text="No customer selected" />
+                        <Separator />
+                        <ListView fx:id="messageHistoryListView" VBox.vgrow="ALWAYS" />
+                        <HBox spacing="10">
+                            <TextField fx:id="messageField" promptText="Type message..." HBox.hgrow="ALWAYS" />
+                            <Button fx:id="sendMessageButton" text="Send" />
+                        </HBox>
+                    </VBox>
+                </SplitPane>
+            </Tab>
+            
+            <Tab text="Notifications">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Customer Notifications" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="createNotificationButton" text="Create New" />
+                    </HBox>
+                    <TableView fx:id="notificationsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="notificationIdColumn" text="ID" />
+                            <TableColumn fx:id="notificationTitleColumn" text="Title" />
+                            <TableColumn fx:id="notificationTargetColumn" text="Target" />
+                            <TableColumn fx:id="notificationDateColumn" text="Date" />
+                            <TableColumn fx:id="notificationTypeColumn" text="Type" />
+                            <TableColumn fx:id="notificationStatusColumn" text="Status" />
+                            <TableColumn fx:id="notificationActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ProgressIndicator fx:id="progressIndicator" visible="false" />
+        </HBox>
+    </bottom>
+</BorderPane>

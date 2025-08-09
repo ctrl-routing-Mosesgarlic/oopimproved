@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.GlobalManagerDashboardController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, Global Manager" styleClass="header-label">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="serverInfoLabel" text="Connected to: Headquarters (HQ)" />
+                <Button fx:id="logoutButton" text="Logout" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Branch Overview">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Branch Stock Overview" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="branchFilterComboBox" promptText="Filter by Branch" />
+                        <Button fx:id="refreshStockButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="branchStockTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="branchNameColumn" text="Branch" />
+                            <TableColumn fx:id="drinkNameColumn" text="Drink" />
+                            <TableColumn fx:id="stockQuantityColumn" text="Quantity" />
+                            <TableColumn fx:id="stockValueColumn" text="Value" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Sales Overview">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Company-wide Sales" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="refreshSalesButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="salesTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="orderIdColumn" text="Order ID" />
+                            <TableColumn fx:id="orderBranchColumn" text="Branch" />
+                            <TableColumn fx:id="orderCustomerColumn" text="Customer" />
+                            <TableColumn fx:id="orderDateColumn" text="Date" />
+                            <TableColumn fx:id="orderAmountColumn" text="Amount" />
+                            <TableColumn fx:id="orderStatusColumn" text="Status" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Performance Analysis">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Branch Performance" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="chartTypeComboBox" promptText="Chart Type" />
+                        <DatePicker fx:id="startDatePicker" promptText="Start Date" />
+                        <DatePicker fx:id="endDatePicker" promptText="End Date" />
+                        <Button fx:id="updateChartButton" text="Update Chart" />
+                    </HBox>
+                    <BarChart fx:id="branchPerformanceChart" legendVisible="true" VBox.vgrow="ALWAYS">
+                        <xAxis>
+                            <CategoryAxis fx:id="xAxis" label="Branch" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="yAxis" label="Value" />
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Branch Management">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Branch Communications" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Target Branch:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <ComboBox fx:id="targetBranchComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        
+                        <Label text="Alert Type:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="alertTypeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        
+                        <Label text="Message:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextArea fx:id="alertMessageArea" prefHeight="100" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        
+                        <Button fx:id="sendAlertButton" text="Send Alert" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    </GridPane>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Stock Management">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Update Branch Stock" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Branch:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <ComboBox fx:id="stockBranchComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        
+                        <Label text="Drink:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="stockDrinkComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        
+                        <Label text="Quantity:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="stockQuantityField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        
+                        <Button fx:id="updateStockButton" text="Update Stock" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    </GridPane>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ProgressIndicator fx:id="progressIndicator" visible="false" />
+        </HBox>
+    </bottom>
+</BorderPane>

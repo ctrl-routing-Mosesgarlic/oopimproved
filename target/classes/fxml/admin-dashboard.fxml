@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drinks.rmi.client.gui.controller.AdminDashboardController" stylesheets="@../css/dashboard.css">
+   
+   <!-- Header -->
+   <top>
+      <VBox styleClass="header-container">
+         <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <padding>
+               <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+            
+            <Label fx:id="welcomeLabel" styleClass="welcome-label" text="Welcome, Admin">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            
+            <Region HBox.hgrow="ALWAYS" />
+            
+            <Label fx:id="serverInfoLabel" styleClass="server-info-label" text="Connected to: HQ Server" />
+            
+            <Button fx:id="logoutButton" styleClass="logout-button" text="Logout" />
+         </HBox>
+      </VBox>
+   </top>
+   
+   <!-- Main Content -->
+   <center>
+      <TabPane styleClass="main-tabs" tabClosingPolicy="UNAVAILABLE">
+         
+         <!-- Drinks Management Tab -->
+         <Tab text="Drinks Management">
+            <VBox spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <!-- Drinks Table -->
+               <VBox spacing="10.0">
+                  <Label styleClass="section-title" text="Drinks Catalog">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  
+                  <TableView fx:id="drinksTable" prefHeight="300.0">
+                     <columns>
+                        <TableColumn fx:id="drinkIdColumn" prefWidth="80.0" text="ID" />
+                        <TableColumn fx:id="drinkNameColumn" prefWidth="200.0" text="Name" />
+                        <TableColumn fx:id="drinkPriceColumn" prefWidth="120.0" text="Price ($)" />
+                     </columns>
+                  </TableView>
+               </VBox>
+               
+               <!-- Add/Edit Drink Form -->
+               <VBox spacing="10.0" styleClass="form-container">
+                  <Label styleClass="section-title" text="Add/Edit Drink">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  
+                  <HBox spacing="15.0" alignment="CENTER_LEFT">
+                     <VBox spacing="5.0">
+                        <Label text="Drink Name:" />
+                        <TextField fx:id="drinkNameField" prefWidth="200.0" promptText="Enter drink name" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0">
+                        <Label text="Price ($):" />
+                        <TextField fx:id="drinkPriceField" prefWidth="120.0" promptText="0.00" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0" alignment="BOTTOM_LEFT">
+                        <HBox spacing="10.0">
+                           <Button fx:id="addDrinkButton" styleClass="primary-button" text="Add Drink" />
+                           <Button fx:id="updateDrinkButton" styleClass="secondary-button" text="Update" disable="true" />
+                           <Button fx:id="deleteDrinkButton" styleClass="danger-button" text="Delete" disable="true" />
+                        </HBox>
+                     </VBox>
+                  </HBox>
+               </VBox>
+            </VBox>
+         </Tab>
+         
+         <!-- Users Management Tab -->
+         <Tab text="Users Management">
+            <VBox spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <!-- Users Table -->
+               <VBox spacing="10.0">
+                  <Label styleClass="section-title" text="System Users">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  
+                  <TableView fx:id="usersTable" prefHeight="300.0">
+                     <columns>
+                        <TableColumn fx:id="userIdColumn" prefWidth="80.0" text="ID" />
+                        <TableColumn fx:id="usernameColumn" prefWidth="200.0" text="Username" />
+                        <TableColumn fx:id="roleColumn" prefWidth="150.0" text="Role" />
+                     </columns>
+                  </TableView>
+               </VBox>
+               
+               <!-- Add User Form -->
+               <VBox spacing="10.0" styleClass="form-container">
+                  <Label styleClass="section-title" text="Create New User">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  
+                  <HBox spacing="15.0" alignment="CENTER_LEFT">
+                     <VBox spacing="5.0">
+                        <Label text="Username:" />
+                        <TextField fx:id="usernameField" prefWidth="150.0" promptText="Enter username" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0">
+                        <Label text="Password:" />
+                        <PasswordField fx:id="passwordField" prefWidth="150.0" promptText="Enter password" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0">
+                        <Label text="Role:" />
+                        <ComboBox fx:id="roleComboBox" prefWidth="150.0" promptText="Select role" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0">
+                        <Label text="Branch (optional):" />
+                        <ComboBox fx:id="branchComboBox" prefWidth="120.0" promptText="Select branch" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0" alignment="BOTTOM_LEFT">
+                        <HBox spacing="10.0">
+                           <Button fx:id="addUserButton" styleClass="primary-button" text="Create User" />
+                           <Button fx:id="deleteUserButton" styleClass="danger-button" text="Delete Selected" disable="true" />
+                        </HBox>
+                     </VBox>
+                  </HBox>
+               </VBox>
+            </VBox>
+         </Tab>
+         
+         <!-- Reports Tab -->
+         <Tab text="Reports & Analytics">
+            <VBox spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <!-- Report Generation -->
+               <VBox spacing="10.0" styleClass="form-container">
+                  <Label styleClass="section-title" text="Generate Reports">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  
+                  <HBox spacing="15.0" alignment="CENTER_LEFT">
+                     <VBox spacing="5.0">
+                        <Label text="Report Type:" />
+                        <ComboBox fx:id="reportTypeComboBox" prefWidth="200.0" promptText="Select report type" />
+                     </VBox>
+                     
+                     <VBox spacing="5.0" alignment="BOTTOM_LEFT">
+                        <Button fx:id="generateReportButton" styleClass="primary-button" text="Generate Report" />
+                     </VBox>
+                     
+                     <Region HBox.hgrow="ALWAYS" />
+                     
+                     <ProgressIndicator fx:id="progressIndicator" maxHeight="30.0" maxWidth="30.0" />
+                  </HBox>
+               </VBox>
+               
+               <!-- Report Display -->
+               <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+                  <Label styleClass="section-title" text="Report Results">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  
+                  <TextArea fx:id="reportTextArea" prefHeight="400.0" styleClass="report-text-area" 
+                           promptText="Generated reports will appear here..." wrapText="true" />
+               </VBox>
+            </VBox>
+         </Tab>
+      </TabPane>
+   </center>
+   
+   <!-- Footer -->
+   <bottom>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="footer-container">
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+         
+         <Label fx:id="statusLabel" styleClass="status-label" text="Ready" />
+         
+         <Region HBox.hgrow="ALWAYS" />
+         
+         <Label styleClass="footer-label" text="Drink Business RMI System - Admin Dashboard" />
+      </HBox>
+   </bottom>
+</BorderPane>

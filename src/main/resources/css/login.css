@@ -1,0 +1,126 @@
+/* Login Screen Styles */
+
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #667eea 0%, #764ba2 100%);
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.login-container {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0, 0, 5);
+    -fx-border-radius: 15px;
+}
+
+.login-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.login-subtitle {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-style: italic;
+}
+
+.login-field {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e9ecef;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px;
+    -fx-font-size: 14px;
+}
+
+.login-field:focused {
+    -fx-border-color: #667eea;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.3), 5, 0, 0, 0);
+}
+
+.combo-box {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e9ecef;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #667eea;
+    -fx-border-width: 2px;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 8px;
+}
+
+.login-button {
+    -fx-background-color: linear-gradient(to right, #667eea, #764ba2);
+    -fx-text-fill: white;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #5a6fd8, #6a4190);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 2);
+}
+
+.login-button:pressed {
+    -fx-background-color: linear-gradient(to right, #4e5bc6, #5e3a7e);
+}
+
+.login-button:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+    -fx-cursor: default;
+}
+
+.status-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+.info-label {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.sample-users {
+    -fx-text-fill: #7f8c8d;
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #e9ecef;
+    -fx-border-width: 1px;
+}
+
+.footer-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+    -fx-font-size: 11px;
+    -fx-text-alignment: center;
+}
+
+.progress-indicator {
+    -fx-progress-color: #667eea;
+}
+
+.separator .line {
+    -fx-border-color: #e9ecef;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* Label styling */
+.label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 13px;
+}

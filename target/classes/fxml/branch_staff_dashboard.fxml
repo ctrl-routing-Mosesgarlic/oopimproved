@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.BranchStaffDashboardController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, Branch Staff" styleClass="header-label">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="serverInfoLabel" text="Connected to: Branch Server" />
+                <Button fx:id="logoutButton" text="Logout" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Process Orders">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Pending Orders" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="refreshOrdersButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="orderIdColumn" text="ID" />
+                            <TableColumn fx:id="orderCustomerColumn" text="Customer" />
+                            <TableColumn fx:id="orderDateColumn" text="Date" />
+                            <TableColumn fx:id="orderItemsColumn" text="Items" />
+                            <TableColumn fx:id="orderTotalColumn" text="Total" />
+                            <TableColumn fx:id="orderStatusColumn" text="Status" />
+                            <TableColumn fx:id="orderActionsColumn" text="Actions" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button fx:id="processOrderButton" text="Process Selected Order" />
+                        <Button fx:id="completeOrderButton" text="Mark as Complete" />
+                        <Button fx:id="cancelOrderButton" text="Cancel Order" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Inventory">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Available Stock" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="inventorySearchField" promptText="Search drinks..." />
+                        <Button fx:id="refreshInventoryButton" text="Refresh" />
+                    </HBox>
+                    <TableView fx:id="inventoryTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="drinkIdColumn" text="ID" />
+                            <TableColumn fx:id="drinkNameColumn" text="Name" />
+                            <TableColumn fx:id="drinkPriceColumn" text="Price" />
+                            <TableColumn fx:id="stockQuantityColumn" text="Quantity" />
+                            <TableColumn fx:id="stockStatusColumn" text="Status" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Create Order">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Create Walk-in Order" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Customer Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="customerNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        
+                        <Label text="Customer Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="customerEmailField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        
+                        <Label text="Customer Phone:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="customerPhoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </GridPane>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Add Items:" />
+                        <ComboBox fx:id="drinkComboBox" promptText="Select Drink" />
+                        <Spinner fx:id="quantitySpinner" editable="true" />
+                        <Button fx:id="addToCartButton" text="Add to Cart" />
+                    </HBox>
+                    
+                    <Label text="Order Items:" />
+                    <ListView fx:id="cartListView" VBox.vgrow="ALWAYS" />
+                    
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Label text="Total: " />
+                        <Label fx:id="totalLabel" text="$0.00" />
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button fx:id="clearCartButton" text="Clear Cart" />
+                        <Button fx:id="placeOrderButton" text="Place Order" />
+                    </HBox>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Customer Service">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Customer Messages" styleClass="section-header">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    <ListView fx:id="messageListView" VBox.vgrow="ALWAYS" />
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="messageField" promptText="Enter message..." HBox.hgrow="ALWAYS" />
+                        <Button fx:id="sendMessageButton" text="Send Message" />
+                    </HBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ProgressIndicator fx:id="progressIndicator" visible="false" />
+        </HBox>
+    </bottom>
+</BorderPane>
