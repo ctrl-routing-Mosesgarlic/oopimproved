@@ -39,6 +39,7 @@ public class HQServer {
     private static ReportServiceImpl reportService;
     private static NotificationServiceImpl notificationService;
     private static LoadBalancerServiceImpl loadBalancerService;
+    private static PaymentServiceImpl paymentService;
     
     public static void main(String[] args) {
         try {
@@ -81,6 +82,7 @@ public class HQServer {
             reportService = new ReportServiceImpl();
             notificationService = new NotificationServiceImpl();
             loadBalancerService = new LoadBalancerServiceImpl();
+            paymentService = new PaymentServiceImpl();
             
             logger.info("All services created and auto-exported successfully");
             
@@ -92,7 +94,8 @@ public class HQServer {
                 "HQ_OrderService", orderService,
                 "HQ_ReportService", reportService,
                 "HQ_NotificationService", notificationService,
-                "HQ_LoadBalancerService", loadBalancerService
+                "HQ_LoadBalancerService", loadBalancerService,
+                "HQ_PaymentService", paymentService
             );
             
             for (Map.Entry<String, Remote> entry : services.entrySet()) {
@@ -129,6 +132,7 @@ public class HQServer {
             logger.info("  - ReportService: {}", baseUrl + "HQ_ReportService");
             logger.info("  - NotificationService: {}", baseUrl + "HQ_NotificationService");
             logger.info("  - LoadBalancerService: {}", baseUrl + "HQ_LoadBalancerService");
+            logger.info("  - PaymentService: {}", baseUrl + "HQ_PaymentService");
             
             // Add shutdown hook
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -145,6 +149,9 @@ public class HQServer {
                         loadBalancerService.shutdown();
                         UnicastRemoteObject.unexportObject(loadBalancerService, true);
                     }
+                    if (paymentService != null) {
+                        UnicastRemoteObject.unexportObject(paymentService, true);
+                    }
                     
                     // Use SSL registry for unbinding services
                     try {
@@ -156,6 +163,7 @@ public class HQServer {
                         sslRegistry.unbind("HQ_ReportService");
                         sslRegistry.unbind("HQ_NotificationService");
                         sslRegistry.unbind("HQ_LoadBalancerService");
+                        sslRegistry.unbind("HQ_PaymentService");
                         logger.info("All services unbound from registry");
                     } catch (Exception e) {
                         logger.warn("Failed to unbind services from registry: {}", e.getMessage());

@@ -5,7 +5,7 @@ import com.drinks.rmi.dto.OrderDTO;
 import com.drinks.rmi.dto.StockDTO;
 import com.drinks.rmi.dto.DrinkDTO;
 import com.drinks.rmi.dto.UserDTO;
-import com.drinks.rmi.interfaces.*;
+// import com.drinks.rmi.interfaces.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

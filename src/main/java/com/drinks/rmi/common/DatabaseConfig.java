@@ -16,7 +16,7 @@ public class DatabaseConfig {
     
     private static final Logger logger = LoggerFactory.getLogger(DatabaseConfig.class);
     
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/drinkdb1";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/drinkdbsales";
     private static final String DB_USERNAME = "dba";
     private static final String DB_PASSWORD = "zIppoRah";
     

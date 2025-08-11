@@ -5,7 +5,7 @@ import com.drinks.rmi.dto.DrinkPopularityReportDTO;
 import com.drinks.rmi.dto.NotificationDTO;
 import com.drinks.rmi.dto.OrderDTO;
 import com.drinks.rmi.dto.StockDTO;
-import com.drinks.rmi.interfaces.*;
+// import com.drinks.rmi.interfaces.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,12 +50,12 @@ public class AuditorDashboardController extends BaseDashboardController implemen
     
     // Financial Data
     @FXML private TableView<OrderDTO> financialTable;
-    @FXML private TableColumn<OrderDTO, Long> orderIdColumn;
-    @FXML private TableColumn<OrderDTO, String> branchColumn;
-    @FXML private TableColumn<OrderDTO, String> customerColumn;
-    @FXML private TableColumn<OrderDTO, String> dateColumn;
-    @FXML private TableColumn<OrderDTO, Double> amountColumn;
-    @FXML private TableColumn<OrderDTO, String> statusColumn;
+    @FXML private TableColumn<OrderDTO, String> financialBranchColumn;
+    @FXML private TableColumn<OrderDTO, String> financialPeriodColumn;
+    @FXML private TableColumn<OrderDTO, Double> financialRevenueColumn;
+    @FXML private TableColumn<OrderDTO, Double> financialCostColumn;
+    @FXML private TableColumn<OrderDTO, Double> financialProfitColumn;
+    @FXML private TableColumn<OrderDTO, Double> financialGrowthColumn;
     
     // Charts
     @FXML private BarChart<String, Number> salesChart;
@@ -137,12 +137,12 @@ public class AuditorDashboardController extends BaseDashboardController implemen
     }
     
     private void setupFinancialTable() {
-        orderIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        branchColumn.setCellValueFactory(new PropertyValueFactory<>("branchName"));
-        customerColumn.setCellValueFactory(new PropertyValueFactory<>("customerName"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("orderDate"));
-        amountColumn.setCellValueFactory(new PropertyValueFactory<>("totalAmount"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+        financialBranchColumn.setCellValueFactory(new PropertyValueFactory<>("branch"));
+        financialPeriodColumn.setCellValueFactory(new PropertyValueFactory<>("period"));
+        financialRevenueColumn.setCellValueFactory(new PropertyValueFactory<>("revenue"));
+        financialCostColumn.setCellValueFactory(new PropertyValueFactory<>("cost"));
+        financialProfitColumn.setCellValueFactory(new PropertyValueFactory<>("profit"));
+        financialGrowthColumn.setCellValueFactory(new PropertyValueFactory<>("growth"));
         
         financialTable.setItems(financialData);
     }

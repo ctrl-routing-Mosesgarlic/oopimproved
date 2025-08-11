@@ -29,7 +29,8 @@ public class RoleBasedAccessControl {
             "report:create", "report:read", "report:update", "report:delete",
             "branch:create", "branch:read", "branch:update", "branch:delete",
             "notification:create", "notification:read", "notification:update", "notification:delete",
-            "system:configure"
+            "system:configure",
+            "payment:create", "payment:read", "payment:update", "payment:delete"
         ));
         ROLE_PERMISSIONS.put("admin", adminPermissions);
         
@@ -41,7 +42,8 @@ public class RoleBasedAccessControl {
             "order:read",
             "report:read", "report:create",
             "branch:read",
-            "notification:read", "notification:create"
+            "notification:read", "notification:create",
+            "payment:read"
         ));
         ROLE_PERMISSIONS.put("global_manager", globalManagerPermissions);
         
@@ -52,7 +54,9 @@ public class RoleBasedAccessControl {
             "stock:read", "stock:update",
             "order:read", "order:update",
             "report:read", "report:create",
-            "notification:read", "notification:create"
+            "branch:read",
+            "notification:read", "notification:create",
+            "payment:create", "payment:read"
         ));
         ROLE_PERMISSIONS.put("branch_manager", branchManagerPermissions);
         
@@ -61,7 +65,8 @@ public class RoleBasedAccessControl {
             "drink:read",
             "stock:read", "stock:update",
             "order:read", "order:update", "order:create",
-            "notification:read"
+            "notification:read",
+            "payment:create"
         ));
         ROLE_PERMISSIONS.put("branch_staff", branchStaffPermissions);
         
@@ -69,7 +74,8 @@ public class RoleBasedAccessControl {
         Set<String> customerPermissions = new HashSet<>(Arrays.asList(
             "drink:read",
             "order:create", "order:read",
-            "notification:read"
+            "notification:read",
+            "payment:create"
         ));
         ROLE_PERMISSIONS.put("customer", customerPermissions);
         
@@ -80,7 +86,8 @@ public class RoleBasedAccessControl {
             "stock:read",
             "order:read",
             "report:read", "report:create",
-            "branch:read"
+            "branch:read",
+            "payment:read"
         ));
         ROLE_PERMISSIONS.put("auditor", auditorPermissions);
         
@@ -89,7 +96,8 @@ public class RoleBasedAccessControl {
             "user:read",
             "drink:read",
             "order:read", "order:update",
-            "notification:read", "notification:create"
+            "notification:read", "notification:create",
+            "payment:read"
         ));
         ROLE_PERMISSIONS.put("customer_support", customerSupportPermissions);
     }
@@ -107,17 +115,42 @@ public class RoleBasedAccessControl {
             return false;
         }
         
-        String role = user.getRole().toLowerCase();
+        String role = user.getRole().toLowerCase().trim();
+        logger.info("DEBUG: Checking permission '{}' for user '{}' with role '{}'", 
+            requiredPermission, user.getUsername(), role);
+        
         Set<String> permissions = ROLE_PERMISSIONS.get(role);
+        logger.info("DEBUG: Direct role lookup for '{}' returned: {}", role, permissions != null ? "found" : "null");
+        
+        if (permissions == null) {
+            // Try alternative role names if exact match fails
+            logger.info("DEBUG: Trying alternative role matching for '{}'", role);
+            if (role.contains("customer")) {
+                permissions = ROLE_PERMISSIONS.get("customer");
+                logger.info("DEBUG: Customer role fallback returned: {}", permissions != null ? "found" : "null");
+            } else if (role.contains("admin")) {
+                permissions = ROLE_PERMISSIONS.get("admin");
+            } else if (role.contains("manager")) {
+                permissions = ROLE_PERMISSIONS.get(role.contains("global") ? "global_manager" : "branch_manager");
+            } else if (role.contains("staff")) {
+                permissions = ROLE_PERMISSIONS.get("branch_staff");
+            }
+        }
         
         if (permissions == null) {
             logger.warn("Access denied: Unknown role '{}'", role);
+            logger.info("DEBUG: Available roles in ROLE_PERMISSIONS: {}", ROLE_PERMISSIONS.keySet());
             return false;
         }
         
+        logger.info("DEBUG: Permissions for role '{}': {}", role, permissions);
         boolean hasAccess = permissions.contains(requiredPermission);
         if (!hasAccess) {
             logger.warn("Access denied: User '{}' with role '{}' does not have permission '{}'", 
+                user.getUsername(), role, requiredPermission);
+            logger.info("DEBUG: Required permission '{}' not found in permissions: {}", requiredPermission, permissions);
+        } else {
+            logger.info("DEBUG: Permission check PASSED for user '{}' with role '{}' and permission '{}'", 
                 user.getUsername(), role, requiredPermission);
         }
         

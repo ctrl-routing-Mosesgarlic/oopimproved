@@ -51,9 +51,9 @@ public class AuthServiceImpl extends UnicastRemoteObject implements AuthService 
                         rs.getLong("id"),
                         rs.getString("username"),
                         rs.getString("role"),
-                        rs.getLong("branch_id") == 0 ? null : rs.getLong("branch_id"),
+                        rs.getObject("branch_id") == null ? null : rs.getLong("branch_id"),
                         rs.getString("branch_name"),
-                        rs.getLong("customer_id") == 0 ? null : rs.getLong("customer_id"),
+                        rs.getObject("customer_id") == null ? null : rs.getLong("customer_id"),
                         rs.getString("customer_name")
                     );
                     
@@ -217,6 +217,104 @@ public class AuthServiceImpl extends UnicastRemoteObject implements AuthService 
         }
         
         return users;
+    }
+    
+    @Override
+    public boolean deleteUser(Long userId, UserDTO currentUser) throws RemoteException {
+        logger.info("Delete user attempt for user ID: {} (requested by {} - {})", userId, currentUser.getUsername(), currentUser.getRole());
+        
+        // Check if current user has admin privileges
+        if (!"admin".equals(currentUser.getRole())) {
+            logger.warn("Unauthorized delete user attempt by user: {} with role: {}", currentUser.getUsername(), currentUser.getRole());
+            throw new RemoteException("Only admin users can delete users");
+        }
+        
+        // Prevent admin from deleting themselves
+        if (userId.equals(currentUser.getId())) {
+            logger.warn("Admin user {} attempted to delete themselves", currentUser.getUsername());
+            throw new RemoteException("You cannot delete your own account");
+        }
+        
+        try (Connection conn = DatabaseConfig.getConnection()) {
+            conn.setAutoCommit(false);
+            
+            try {
+                // First, check if user exists and get their details
+                String checkUserSql = "SELECT username, role, customer_id FROM users WHERE id = ?";
+                PreparedStatement checkStmt = conn.prepareStatement(checkUserSql);
+                checkStmt.setLong(1, userId);
+                ResultSet rs = checkStmt.executeQuery();
+                
+                if (!rs.next()) {
+                    logger.warn("Attempted to delete non-existent user with ID: {}", userId);
+                    throw new RemoteException("User not found");
+                }
+                
+                String username = rs.getString("username");
+                String role = rs.getString("role");
+                Long customerId = rs.getObject("customer_id", Long.class);
+                
+                // If user is a customer, delete related customer record first
+                if (customerId != null) {
+                    String deleteCustomerSql = "DELETE FROM customers WHERE id = ?";
+                    PreparedStatement deleteCustomerStmt = conn.prepareStatement(deleteCustomerSql);
+                    deleteCustomerStmt.setLong(1, customerId);
+                    deleteCustomerStmt.executeUpdate();
+                    logger.info("Deleted customer record for customer ID: {}", customerId);
+                }
+                
+                // Delete the user record
+                String deleteUserSql = "DELETE FROM users WHERE id = ?";
+                PreparedStatement deleteUserStmt = conn.prepareStatement(deleteUserSql);
+                deleteUserStmt.setLong(1, userId);
+                
+                int rowsAffected = deleteUserStmt.executeUpdate();
+                
+                if (rowsAffected > 0) {
+                    conn.commit();
+                    logger.info("Successfully deleted user: {} (ID: {}, Role: {})", username, userId, role);
+                    return true;
+                } else {
+                    conn.rollback();
+                    logger.warn("Failed to delete user with ID: {} - no rows affected", userId);
+                    return false;
+                }
+                
+            } catch (SQLException e) {
+                conn.rollback();
+                logger.error("Database error during user deletion for user ID: {}", userId, e);
+                throw new RemoteException("Failed to delete user due to database error: " + e.getMessage(), e);
+            }
+            
+        } catch (SQLException e) {
+            logger.error("Database connection error during user deletion for user ID: {}", userId, e);
+            throw new RemoteException("Failed to delete user due to database connection error", e);
+        }
+    }
+    
+    @Override
+    public int updateUserRoles(String fromRole, String toRole, UserDTO currentUser) throws RemoteException {
+        // Only admin can update user roles
+        if (!"admin".equals(currentUser.getRole())) {
+            throw new RemoteException("Only admin users can update user roles");
+        }
+        
+        String sql = "UPDATE users SET role = ? WHERE role = ?";
+        
+        try (Connection conn = DatabaseConfig.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, toRole);
+            stmt.setString(2, fromRole);
+            
+            int rowsUpdated = stmt.executeUpdate();
+            logger.info("Updated {} users from role '{}' to '{}'", rowsUpdated, fromRole, toRole);
+            return rowsUpdated;
+            
+        } catch (SQLException e) {
+            logger.error("Database error while updating user roles from {} to {}", fromRole, toRole, e);
+            throw new RemoteException("Failed to update user roles", e);
+        }
     }
     
     private String getPasswordHash(String username) throws SQLException {

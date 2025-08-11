@@ -53,9 +53,12 @@ public class ReportServiceImpl extends UnicastRemoteObject implements ReportServ
         try {
             // Get total orders and sales
             String totalSql = """
-                SELECT COUNT(*) as total_orders, SUM(total_price) as total_sales
-                FROM orders
-                WHERE branch_id = ? AND order_date BETWEEN ? AND ?
+                SELECT COUNT(DISTINCT o.id) as total_orders, 
+                       COALESCE(SUM(oi.quantity * d.price), 0) as total_sales
+                FROM orders o
+                LEFT JOIN order_items oi ON o.id = oi.order_id
+                LEFT JOIN drinks d ON oi.drink_id = d.id
+                WHERE o.branch_id = ? AND DATE(o.order_time) BETWEEN ? AND ?
                 """;
                 
             try (Connection conn = DatabaseConfig.getConnection();

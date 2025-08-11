@@ -23,24 +23,22 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.URL;
 import java.rmi.registry.LocateRegistry;
-import java.io.IOException;
 import java.math.BigDecimal;
-import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+import com.drinks.rmi.util.UserRoleUpdater;
 
 /**
  * Controller for Admin Dashboard
@@ -77,6 +75,9 @@ public class AdminDashboardController implements DashboardController, Initializa
     @FXML private ComboBox<BranchDTO> branchComboBox;
     @FXML private Button addUserButton;
     @FXML private Button deleteUserButton;
+    @FXML private Button updateRolesButton;
+    @FXML private ComboBox<String> fromRoleComboBox;
+    @FXML private ComboBox<String> toRoleComboBox;
     
     // Reports
     @FXML private TextArea reportTextArea;
@@ -94,6 +95,13 @@ public class AdminDashboardController implements DashboardController, Initializa
     @FXML private TableColumn<PaymentDTO, LocalDateTime> paymentDateColumn;
     @FXML private Button refreshPaymentsButton;
     @FXML private ComboBox<String> paymentStatusFilter;
+    
+    // Dashboard Stats
+    @FXML private Label totalUsersLabel;
+    @FXML private Label totalDrinksLabel;
+    @FXML private Label totalOrdersLabel;
+    @FXML private Label totalRevenueLabel;
+    @FXML private Button refreshStatsButton;
     
     // Status
     @FXML private Label statusLabel;
@@ -124,9 +132,12 @@ public class AdminDashboardController implements DashboardController, Initializa
         setupPaymentsTable();
         
         // Initialize combo boxes
-        roleComboBox.getItems().addAll("admin", "customer_support", "auditor", "global_manager", 
-                                      "branch_manager", "branch_staff", "customer");
-        branchComboBox.setCellFactory(param -> new ListCell<BranchDTO>() {
+        if (roleComboBox != null) {
+            roleComboBox.getItems().addAll("admin", "customer_support", "auditor", "globalmanager", 
+                                          "branchmanager", "branch_staff", "customer");
+        }
+        if (branchComboBox != null) {
+            branchComboBox.setCellFactory(param -> new ListCell<BranchDTO>() {
             @Override
             protected void updateItem(BranchDTO item, boolean empty) {
                 super.updateItem(item, empty);
@@ -145,23 +156,31 @@ public class AdminDashboardController implements DashboardController, Initializa
                 addUserButton.setDisable(true);
             }
         });
+        // Disable add user by default until a branch is selected
+        addUserButton.setDisable(true);
         reportTypeComboBox.getItems().addAll("Sales Report", "Stock Report", "Customer Report", "Drink Popularity Report");
+        
+        // Initialize role combo boxes
+        fromRoleComboBox.getItems().addAll("manager", "branchmanager", "staff", "branch_staff");
+        toRoleComboBox.getItems().addAll("branchmanager", "globalmanager", "customer_support", "auditor","branch_staff");
         
         // Set up button actions
         setupButtonActions();
         
         progressIndicator.setVisible(false);
+        }
     }
     
     private void setupDrinksTable() {
-        drinkIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        drinkNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        drinkPriceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        if (drinkIdColumn != null && drinkNameColumn != null && drinkPriceColumn != null && drinksTable != null) {
+            drinkIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+            drinkNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            drinkPriceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+            
+            drinksTable.setItems(drinksData);
         
-        drinksTable.setItems(drinksData);
-        
-        // Selection listener
-        drinksTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            // Selection listener
+            drinksTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 drinkNameField.setText(newSelection.getName());
                 drinkPriceField.setText(String.valueOf(newSelection.getPrice()));
@@ -172,19 +191,24 @@ public class AdminDashboardController implements DashboardController, Initializa
                 deleteDrinkButton.setDisable(true);
             }
         });
+        }
     }
     
     private void setupUsersTable() {
-        userIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
-        roleColumn.setCellValueFactory(new PropertyValueFactory<>("role"));
-        
-        usersTable.setItems(usersData);
-        
-        // Selection listener
-        usersTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            deleteUserButton.setDisable(newSelection == null);
-        });
+        if (userIdColumn != null && usernameColumn != null && roleColumn != null && usersTable != null) {
+            userIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+            usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
+            roleColumn.setCellValueFactory(new PropertyValueFactory<>("role"));
+            
+            usersTable.setItems(usersData);
+            
+            // Selection listener
+            usersTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+                if (deleteUserButton != null) {
+                    deleteUserButton.setDisable(newSelection == null);
+                }
+            });
+        }
     }
     
     /**
@@ -192,21 +216,25 @@ public class AdminDashboardController implements DashboardController, Initializa
      */
     private void setupPaymentsTable() {
         // Initialize payment status filter
-        paymentStatusFilter.getItems().addAll("All", "SUCCESS", "FAILED", "PENDING");
-        paymentStatusFilter.setValue("All");
-        paymentStatusFilter.setOnAction(e -> filterPayments());
+        if (paymentStatusFilter != null) {
+            paymentStatusFilter.getItems().addAll("All", "SUCCESS", "FAILED", "PENDING");
+            paymentStatusFilter.setValue("All");
+            paymentStatusFilter.setOnAction(e -> filterPayments());
+        }
         
         // Setup table columns
-        paymentIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        paymentOrderIdColumn.setCellValueFactory(new PropertyValueFactory<>("orderId"));
-        paymentCustomerIdColumn.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-        paymentAmountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        paymentMethodColumn.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
-        paymentStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        paymentDateColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
+        if (paymentIdColumn != null && paymentOrderIdColumn != null && paymentCustomerIdColumn != null && 
+            paymentAmountColumn != null && paymentMethodColumn != null && paymentStatusColumn != null && paymentDateColumn != null) {
+            paymentIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+            paymentOrderIdColumn.setCellValueFactory(new PropertyValueFactory<>("orderId"));
+            paymentCustomerIdColumn.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+            paymentAmountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
+            paymentMethodColumn.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
+            paymentStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+            paymentDateColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
         
-        // Format date column
-        paymentDateColumn.setCellFactory(column -> new TableCell<PaymentDTO, LocalDateTime>() {
+            // Format date column
+            paymentDateColumn.setCellFactory(column -> new TableCell<PaymentDTO, LocalDateTime>() {
             private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             
             @Override
@@ -233,8 +261,9 @@ public class AdminDashboardController implements DashboardController, Initializa
             }
         });
         
-        // Set data
-        paymentsTable.setItems(paymentsData);
+            // Set data
+            paymentsTable.setItems(paymentsData);
+        }
     }
     
     private void setupButtonActions() {
@@ -246,6 +275,8 @@ public class AdminDashboardController implements DashboardController, Initializa
         deleteUserButton.setOnAction(e -> handleDeleteUser());
         generateReportButton.setOnAction(e -> handleGenerateReport());
         refreshPaymentsButton.setOnAction(e -> loadPayments());
+        refreshStatsButton.setOnAction(e -> refreshDashboardStats());
+        updateRolesButton.setOnAction(e -> handleUpdateRoles());
     }
     
     @Override
@@ -263,7 +294,7 @@ public class AdminDashboardController implements DashboardController, Initializa
     
     private void connectToServices() {
         try {
-            Registry registry = LocateRegistry.getRegistry(1099);
+            Registry registry = LocateRegistry.getRegistry("localhost", 1099, new javax.rmi.ssl.SslRMIClientSocketFactory());
             
             drinkService = (DrinkService) registry.lookup("HQ_DrinkService");
             reportService = (ReportService) registry.lookup("HQ_ReportService");
@@ -289,6 +320,7 @@ public class AdminDashboardController implements DashboardController, Initializa
         loadUsers();
         loadBranches();
         loadPayments();
+        loadDashboardStatistics();
         
         // Setup notifications
         setupNotifications();
@@ -309,6 +341,10 @@ public class AdminDashboardController implements DashboardController, Initializa
                 Platform.runLater(() -> {
                     drinksData.clear();
                     drinksData.addAll(getValue());
+                    // Update dashboard statistics
+                    if (totalDrinksLabel != null) {
+                        totalDrinksLabel.setText(String.valueOf(getValue().size()));
+                    }
                     statusLabel.setText("Drinks loaded successfully");
                 });
             }
@@ -337,6 +373,10 @@ public class AdminDashboardController implements DashboardController, Initializa
                 Platform.runLater(() -> {
                     usersData.clear();
                     usersData.addAll(getValue());
+                    // Update dashboard statistics
+                    if (totalUsersLabel != null) {
+                        totalUsersLabel.setText(String.valueOf(getValue().size()));
+                    }
                     statusLabel.setText("Users loaded successfully");
                 });
             }
@@ -420,6 +460,61 @@ public class AdminDashboardController implements DashboardController, Initializa
                 progressIndicator.setVisible(false);
                 statusLabel.setText("Failed to load payment records");
                 showError("Failed to load payment records: " + exception.getMessage());
+            }
+        };
+        
+        new Thread(task).start();
+    }
+    
+    /**
+     * Load dashboard statistics (orders and revenue)
+     */
+    private void loadDashboardStatistics() {
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                try {
+                    // Get sales report for last 30 days to calculate totals
+                    LocalDate endDate = LocalDate.now();
+                    LocalDate startDate = endDate.minusDays(30);
+                    
+                    Map<Long, SalesReportDTO> salesReports = reportService.generateAllBranchesSalesReport(
+                        startDate, endDate
+                    );
+                    
+                    // Calculate totals from all branches
+                    int totalOrders = 0;
+                    double totalRevenue = 0.0;
+                    
+                    for (SalesReportDTO report : salesReports.values()) {
+                        totalOrders += report.getTotalOrders();
+                        totalRevenue += report.getTotalRevenue();
+                    }
+                    
+                    final int finalTotalOrders = totalOrders;
+                    final double finalTotalRevenue = totalRevenue;
+                    
+                    Platform.runLater(() -> {
+                        if (totalOrdersLabel != null) {
+                            totalOrdersLabel.setText(String.valueOf(finalTotalOrders));
+                        }
+                        if (totalRevenueLabel != null) {
+                            totalRevenueLabel.setText(String.format("$%.2f", finalTotalRevenue));
+                        }
+                    });
+                    
+                } catch (Exception e) {
+                    logger.warn("Could not load dashboard statistics: " + e.getMessage());
+                    Platform.runLater(() -> {
+                        if (totalOrdersLabel != null) {
+                            totalOrdersLabel.setText("N/A");
+                        }
+                        if (totalRevenueLabel != null) {
+                            totalRevenueLabel.setText("N/A");
+                        }
+                    });
+                }
+                return null;
             }
         };
         
@@ -561,7 +656,12 @@ public class AdminDashboardController implements DashboardController, Initializa
         String username = usernameField.getText().trim();
         String password = passwordField.getText();
         String role = roleComboBox.getValue();
-        Long branchId = branchComboBox.getSelectionModel().getSelectedItem().getId();
+        BranchDTO selectedBranch = branchComboBox.getSelectionModel().getSelectedItem();
+        if (selectedBranch == null) {
+            showError("Please select a branch");
+            return;
+        }
+        Long branchId = selectedBranch.getId();
         
         if (username.isEmpty() || password.isEmpty() || role == null) {
             showError("Please fill in all required fields");
@@ -606,12 +706,73 @@ public class AdminDashboardController implements DashboardController, Initializa
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete User");
         alert.setHeaderText("Are you sure you want to delete this user?");
-        alert.setContentText("User: " + selected.getUsername());
+        alert.setContentText("User: " + selected.getUsername() + " (Role: " + selected.getRole() + ")");
         
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            // Note: We would need to implement deleteUser in AuthService
-            showError("Delete user functionality not yet implemented in AuthService");
+            try {
+                statusLabel.setText("Deleting user...");
+                progressIndicator.setVisible(true);
+                
+                Task<Boolean> deleteTask = new Task<Boolean>() {
+                    @Override
+                    protected Boolean call() throws Exception {
+                        return authService.deleteUser(selected.getId(), currentUser);
+                    }
+                    
+                    @Override
+                    protected void succeeded() {
+                        Platform.runLater(() -> {
+                            progressIndicator.setVisible(false);
+                            if (getValue()) {
+                                statusLabel.setText("✅ User deleted successfully");
+                                statusLabel.setStyle("-fx-text-fill: green;");
+                                
+                                // Show success message
+                                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                                successAlert.setTitle("Success");
+                                successAlert.setHeaderText(null);
+                                successAlert.setContentText("User '" + selected.getUsername() + "' has been deleted successfully.");
+                                successAlert.showAndWait();
+                                
+                                // Refresh the users table
+                                loadUsers();
+                            } else {
+                                statusLabel.setText("❌ Failed to delete user");
+                                statusLabel.setStyle("-fx-text-fill: red;");
+                                showError("Failed to delete user. Please try again.");
+                            }
+                        });
+                    }
+                    
+                    @Override
+                    protected void failed() {
+                        Platform.runLater(() -> {
+                            progressIndicator.setVisible(false);
+                            statusLabel.setText("❌ Error deleting user");
+                            statusLabel.setStyle("-fx-text-fill: red;");
+                            
+                            Throwable exception = getException();
+                            String errorMessage = "Failed to delete user";
+                            if (exception != null) {
+                                errorMessage += ": " + exception.getMessage();
+                            }
+                            showError(errorMessage);
+                        });
+                    }
+                };
+                
+                Thread deleteThread = new Thread(deleteTask);
+                deleteThread.setDaemon(true);
+                deleteThread.start();
+                
+            } catch (Exception e) {
+                progressIndicator.setVisible(false);
+                statusLabel.setText("❌ Error deleting user");
+                statusLabel.setStyle("-fx-text-fill: red;");
+                showError("Failed to delete user: " + e.getMessage());
+                logger.error("Error deleting user", e);
+            }
         }
     }
     
@@ -631,16 +792,45 @@ public class AdminDashboardController implements DashboardController, Initializa
             protected String call() throws Exception {
                 switch (reportType) {
                     case "Sales Report":
-                        Map<Long, SalesReportDTO> salesReports = reportService.generateAllBranchesSalesReport(null, null);
+                        // Default to last 30 days if no date range specified
+                        LocalDate salesEndDate = LocalDate.now();
+                        LocalDate salesStartDate = salesEndDate.minusDays(30);
+                        
+                        Map<Long, SalesReportDTO> salesReports = reportService.generateAllBranchesSalesReport(
+                            salesStartDate, salesEndDate
+                        );
                         return formatSalesReport(salesReports.values().iterator().next());
                     case "Stock Report":
                         Map<Long, StockReportDTO> stockReports = reportService.generateAllBranchesStockReport();
                         return formatStockReport(stockReports.values().iterator().next());
                     case "Customer Report":
-                        CustomerReportDTO customerReport = reportService.generateCustomerReport(null, null, null);
-                        return formatCustomerReport(customerReport);
+                        // Check if a customer user is selected for individual report
+                        UserDTO selectedUser = usersTable.getSelectionModel().getSelectedItem();
+                        
+                        // Default to last 30 days if no date range specified
+                        LocalDate reportEndDate = LocalDate.now();
+                        LocalDate reportStartDate = reportEndDate.minusDays(30);
+                        
+                        if (selectedUser != null && selectedUser.getCustomerId() != null) {
+                            // Generate individual customer report
+                            CustomerReportDTO customerReport = reportService.generateCustomerReport(
+                                selectedUser.getCustomerId(), reportStartDate, reportEndDate
+                            );
+                            return "=== INDIVIDUAL CUSTOMER REPORT ===\n" + 
+                                   "Customer: " + selectedUser.getUsername() + "\n\n" +
+                                   formatCustomerReport(customerReport);
+                        } else {
+                            // Generate all customers summary report
+                            return AdminDashboardController.this.generateAllCustomersReport(reportStartDate, reportEndDate);
+                        }
                     case "Drink Popularity Report":
-                        DrinkPopularityReportDTO popularityReport = reportService.generateDrinkPopularityReport(null, null);
+                        // Default to last 30 days if no date range specified
+                        LocalDate popularityEndDate = LocalDate.now();
+                        LocalDate popularityStartDate = popularityEndDate.minusDays(30);
+                        
+                        DrinkPopularityReportDTO popularityReport = reportService.generateDrinkPopularityReport(
+                            popularityStartDate, popularityEndDate
+                        );
                         return formatPopularityReport(popularityReport);
                     default:
                         throw new IllegalArgumentException("Unknown report type: " + reportType);
@@ -696,11 +886,57 @@ public class AdminDashboardController implements DashboardController, Initializa
     private String formatCustomerReport(CustomerReportDTO report) {
         StringBuilder sb = new StringBuilder();
         sb.append("=== CUSTOMER REPORT ===\n\n");
-        sb.append("Total Customers: ").append(report.getTotalCustomers()).append("\n");
-        sb.append("Active Customers: ").append(report.getActiveCustomers()).append("\n\n");
-        sb.append("Customer Details:\n");
-        report.getCustomerOrderHistory().forEach((customer, orders) -> 
-            sb.append("  ").append(customer).append(": ").append(orders).append(" orders\n"));
+        
+        if (report.getCustomerId() != null) {
+            // Detailed individual customer report
+            sb.append("Customer ID: ").append(report.getCustomerId()).append("\n");
+            sb.append("Name: ").append(report.getCustomerName()).append("\n");
+            sb.append("Email: ").append(report.getCustomerEmail()).append("\n");
+            sb.append("Phone: ").append(report.getCustomerPhone()).append("\n\n");
+            
+            sb.append("=== ACTIVITY SUMMARY ===\n");
+            sb.append("Total Orders: ").append(report.getTotalOrders()).append("\n");
+            sb.append("Total Spent: ").append(report.getTotalSpent()).append("\n");
+            sb.append("Login Count: ").append(report.getLoginCount()).append("\n\n");
+            
+            sb.append("=== RECENT LOGINS ===\n");
+            if (!report.getLoginHistory().isEmpty()) {
+                report.getLoginHistory().forEach(login -> 
+                    sb.append("  ").append(login.getLoginTime())
+                      .append(" from ").append(login.getIpAddress()).append("\n"));
+            } else {
+                sb.append("  No login history available\n");
+            }
+            sb.append("\n");
+            
+            sb.append("=== PAYMENT DETAILS ===\n");
+            if (!report.getPayments().isEmpty()) {
+                report.getPayments().forEach(payment -> 
+                    sb.append("  ").append(payment.getAmount())
+                      .append(" on ").append(payment.getCreatedAt()).append("\n"));
+            } else {
+                sb.append("  No payment history available\n");
+            }
+            sb.append("\n");
+            
+            sb.append("=== ORDER HISTORY ===\n");
+            if (!report.getOrders().isEmpty()) {
+                report.getOrders().forEach(order -> 
+                    sb.append("  Order #").append(order.getId())
+                      .append(": ").append(order.getTotalAmount())
+                      .append(" on ").append(order.getOrderTime()).append("\n"));
+            } else {
+                sb.append("  No orders in this period\n");
+            }
+        } else {
+            // Summary report for all customers
+            sb.append("Total Customers: ").append(report.getTotalCustomers()).append("\n");
+            sb.append("Active Customers: ").append(report.getActiveCustomers()).append("\n\n");
+            sb.append("Customer Order Summary:\n");
+            report.getCustomerOrderHistory().forEach((customer, orders) -> 
+                sb.append("  ").append(customer).append(": ").append(orders.size()).append(" orders\n"));
+        }
+        
         return sb.toString();
     }
     
@@ -712,6 +948,50 @@ public class AdminDashboardController implements DashboardController, Initializa
             sb.append("  ").append(drink.getDrinkName()).append(": ").append(drink.getTotalOrders())
               .append(" orders, $").append(String.format("%.2f", drink.getTotalRevenue())).append(" revenue\n"));
         return sb.toString();
+    }
+    
+    /**
+     * Generate a summary report for all customers
+     */
+    private String generateAllCustomersReport(LocalDate startDate, LocalDate endDate) {
+        try {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== ALL CUSTOMERS SUMMARY REPORT ===\n");
+            sb.append("Report Period: ").append(startDate).append(" to ").append(endDate).append("\n\n");
+            sb.append("💡 TIP: Select a specific customer from the Users Management tab for detailed individual reports\n\n");
+            
+            // Get all customer users
+            List<UserDTO> allUsers = authService.getAllUsers(currentUser);
+            List<UserDTO> customerUsers = allUsers.stream()
+                .filter(user -> "customer".equals(user.getRole()) && user.getCustomerId() != null)
+                .collect(Collectors.toList());
+            
+            sb.append("📊 SUMMARY STATISTICS:\n");
+            sb.append("Total Customer Users: ").append(customerUsers.size()).append("\n\n");
+            
+            if (customerUsers.isEmpty()) {
+                sb.append("No customer users found in the system.\n");
+                return sb.toString();
+            }
+            
+            sb.append("👥 CUSTOMER LIST:\n");
+            for (UserDTO customer : customerUsers) {
+                sb.append("  • ").append(customer.getUsername())
+                  .append(" (ID: ").append(customer.getCustomerId()).append(")\n");
+            }
+            
+            sb.append("\n📋 INDIVIDUAL REPORTS:\n");
+            sb.append("To generate detailed reports for specific customers:\n");
+            sb.append("1. Go to Users Management tab\n");
+            sb.append("2. Select a customer from the table\n");
+            sb.append("3. Return to Reports tab and generate Customer Report\n");
+            
+            return sb.toString();
+            
+        } catch (Exception e) {
+            logger.error("Failed to generate all customers report", e);
+            return "Error generating all customers report: " + e.getMessage();
+        }
     }
     
     private void setupNotifications() {
@@ -804,7 +1084,44 @@ public class AdminDashboardController implements DashboardController, Initializa
         }
     }
     
-
+    @FXML
+    private void handleUpdateRoles() {
+        String fromRole = fromRoleComboBox.getValue();
+        String toRole = toRoleComboBox.getValue();
+        
+        if (fromRole == null || toRole == null) {
+            showError("Please select both 'From' and 'To' roles");
+            return;
+        }
+        
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Update User Roles");
+        confirmation.setHeaderText("This will update all '" + fromRole + "' roles to '" + toRole + "'");
+        confirmation.setContentText("Are you sure you want to proceed?");
+        
+        confirmation.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                Task<Integer> updateTask = UserRoleUpdater.createUpdateTask(
+                    authService,
+                    currentUser,
+                    fromRole,
+                    toRole
+                );
+                
+                updateTask.setOnSucceeded(e -> {
+                    int count = updateTask.getValue();
+                    showSuccess("Updated " + count + " user records");
+                    loadUsers(); // Refresh user list
+                });
+                
+                updateTask.setOnFailed(e -> {
+                    showError("Failed to update roles: " + updateTask.getException().getMessage());
+                });
+                
+                new Thread(updateTask).start();
+            }
+        });
+    }
     
     /**
      * Filter payments based on selected status
@@ -823,13 +1140,30 @@ public class AdminDashboardController implements DashboardController, Initializa
     }
     
     private void showError(String message) {
-        statusLabel.setText(message);
-        statusLabel.setStyle("-fx-text-fill: red;");
+        if (statusLabel != null) {
+            statusLabel.setText(message);
+            statusLabel.setStyle("-fx-text-fill: red;");
+        }
         
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    
+    private void showSuccess(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+    
+    private void refreshDashboardStats() {
+        statusLabel.setText("Refreshing dashboard statistics...");
+        loadUsers();
+        loadDrinks();
+        loadDashboardStatistics();
     }
 }

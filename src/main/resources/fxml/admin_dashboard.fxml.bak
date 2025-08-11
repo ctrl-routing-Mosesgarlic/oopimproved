@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.drinks.rmi.client.gui.controller.AdminDashboardController" stylesheets="@/css/dashboard.css">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="20" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Welcome, Administrator" styleClass="header-label">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="serverInfoLabel" text="Connected to: Headquarters (HQ)" />
+                <Button fx:id="logoutButton" text="Logout" />
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Dashboard">
+                <VBox spacing="20">
+                    <padding>
+                        <Insets bottom="10" left="20" right="20" top="10" />
+                    </padding>
+                    <HBox spacing="20" alignment="CENTER">
+                        <VBox styleClass="dashboard-card" spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="Total Users" styleClass="card-title" />
+                            <Label fx:id="totalUsersLabel" text="0" styleClass="card-value" />
+                        </VBox>
+                        <VBox styleClass="dashboard-card" spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="Total Drinks" styleClass="card-title" />
+                            <Label fx:id="totalDrinksLabel" text="0" styleClass="card-value" />
+                        </VBox>
+                        <VBox styleClass="dashboard-card" spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="Total Orders" styleClass="card-title" />
+                            <Label fx:id="totalOrdersLabel" text="0" styleClass="card-value" />
+                        </VBox>
+                        <VBox styleClass="dashboard-card" spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="Total Revenue" styleClass="card-title" />
+                            <Label fx:id="totalRevenueLabel" text="$0.00" styleClass="card-value" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

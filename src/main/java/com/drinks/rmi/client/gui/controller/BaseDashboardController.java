@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import javax.rmi.ssl.SslRMIClientSocketFactory;
 
 /**
  * Base Dashboard Controller with common functionality for all user roles
@@ -68,31 +69,54 @@ public abstract class BaseDashboardController implements DashboardController {
      */
     protected void connectToServices() {
         try {
-            String[] parts = serverInfo.split(":");
-            String host = parts[0];
-            int port = Integer.parseInt(parts[1]);
+            Registry registry;
+            String servicePrefix;
             
-            Registry registry = LocateRegistry.getRegistry(host, port);
-            
-            // Connect to services based on user role and location
-            String prefix = "HQ_"; // Default to HQ
-            
-            // For branch-specific roles, use branch prefix
+            // Determine server type and connection details based on user role and branch
             if (currentUser.getBranchId() != null && 
-                (currentUser.getRole().equals("branch_manager") || 
+                (currentUser.getRole().equals("manager") || 
+                 currentUser.getRole().equals("branch_manager") || 
+                 currentUser.getRole().equals("staff") ||
                  currentUser.getRole().equals("branch_staff"))) {
-                prefix = currentUser.getBranchName().toUpperCase() + "_";
+                
+                // Branch manager/staff connects to their specific branch server
+                String branchName = currentUser.getBranchName();
+                int branchPort = getBranchPort(branchName);
+                servicePrefix = branchName.toUpperCase() + "_";
+                
+                // Branch servers use regular RMI (no SSL)
+                registry = LocateRegistry.getRegistry("localhost", branchPort);
+                
+                logger.info("Connecting to {} branch server on port {}", branchName, branchPort);
+                
+            } else if (serverInfo.contains("Headquarters") || serverInfo.contains("HQ") || 
+                      currentUser.getRole().equals("admin") || 
+                      currentUser.getRole().equals("globalmanager") ||
+                      currentUser.getRole().equals("auditor")) {
+                
+                // HQ roles connect to HQ server with SSL
+                SslRMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
+                registry = LocateRegistry.getRegistry("localhost", 1099, socketFactory);
+                servicePrefix = "HQ_";
+                
+                logger.info("Connecting to HQ server with SSL");
+                
+            } else {
+                // Default to HQ for unknown cases
+                SslRMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
+                registry = LocateRegistry.getRegistry("localhost", 1099, socketFactory);
+                servicePrefix = "HQ_";
             }
             
             // Lookup services
-            drinkService = (DrinkService) registry.lookup(prefix + "DrinkService");
-            orderService = (OrderService) registry.lookup(prefix + "OrderService");
-            stockService = (StockService) registry.lookup(prefix + "StockService");
+            drinkService = (DrinkService) registry.lookup(servicePrefix + "DrinkService");
+            orderService = (OrderService) registry.lookup(servicePrefix + "OrderService");
+            stockService = (StockService) registry.lookup(servicePrefix + "StockService");
             reportService = (ReportService) registry.lookup("HQ_ReportService"); // Reports always from HQ
             notificationService = (NotificationService) registry.lookup("HQ_NotificationService");
             loadBalancerService = (LoadBalancerService) registry.lookup("HQ_LoadBalancerService");
             
-            logger.info("Connected to services with prefix: {}", prefix);
+            logger.info("Connected to services with prefix: {}", servicePrefix);
             
         } catch (Exception e) {
             logger.error("Failed to connect to services", e);
@@ -222,6 +246,25 @@ public abstract class BaseDashboardController implements DashboardController {
     }
     
     /**
+     * Get the port number for a specific branch server
+     * @param branchName Name of the branch
+     * @return Port number for the branch server
+     */
+    private int getBranchPort(String branchName) {
+        if (branchName == null) {
+            return 1100; // Default port
+        }
+        
+        switch (branchName.toLowerCase()) {
+            case "nakuru": return 1100;
+            case "mombasa": return 1101;
+            case "kisumu": return 1102;
+            case "nairobi": return 1103;
+            default: return 1100; // Default to Nakuru port
+        }
+    }
+    
+    /**
      * Show error message
      */
     protected void showError(String message) {
@@ -236,4 +279,5 @@ public abstract class BaseDashboardController implements DashboardController {
             alert.showAndWait();
         });
     }
+    
 }

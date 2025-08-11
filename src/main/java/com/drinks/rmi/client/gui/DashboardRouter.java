@@ -28,8 +28,10 @@ public class DashboardRouter {
         DASHBOARD_FXML_PATHS.put("admin", "/fxml/admin_dashboard.fxml");
         DASHBOARD_FXML_PATHS.put("customer_support", "/fxml/customer_support_dashboard.fxml");
         DASHBOARD_FXML_PATHS.put("auditor", "/fxml/auditor_dashboard.fxml");
-        DASHBOARD_FXML_PATHS.put("global_manager", "/fxml/global_manager_dashboard.fxml");
-        DASHBOARD_FXML_PATHS.put("branch_manager", "/fxml/branch_manager_dashboard.fxml");
+        DASHBOARD_FXML_PATHS.put("globalmanager", "/fxml/global_manager_dashboard.fxml");
+        // DASHBOARD_FXML_PATHS.put("manager", "/fxml/global_manager_dashboard.fxml");
+        DASHBOARD_FXML_PATHS.put("branchmanager", "/fxml/branch_manager_dashboard.fxml");
+        // DASHBOARD_FXML_PATHS.put("staff", "/fxml/branch_staff_dashboard.fxml");
         DASHBOARD_FXML_PATHS.put("branch_staff", "/fxml/branch_staff_dashboard.fxml");
         DASHBOARD_FXML_PATHS.put("customer", "/fxml/customer_dashboard.fxml");
     }

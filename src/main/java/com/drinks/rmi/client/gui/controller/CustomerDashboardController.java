@@ -24,9 +24,10 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.rmi.RemoteException;
+import java.rmi.NotBoundException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.time.LocalDateTime;
+// import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.Map;
 import javafx.scene.Parent;
 import javafx.stage.Modality;
 import com.drinks.rmi.interfaces.PaymentService;
-import com.drinks.rmi.client.gui.controller.PaymentDialogController;
+// import com.drinks.rmi.client.gui.controller.PaymentDialogController;
 import java.util.ResourceBundle;
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 
@@ -82,11 +83,11 @@ public class CustomerDashboardController extends BaseDashboardController impleme
     
     // Data
     private UserDTO currentUser;
-    private AuthService authService;
+    // private AuthService authService;
     private DrinkService drinkService;
     private OrderService orderService;
     private NotificationService notificationService;
-    private LoadBalancerService loadBalancerService;
+    // private LoadBalancerService loadBalancerService;
     private NotificationCallbackImpl notificationCallback;
     private String serverInfo;
     
@@ -95,7 +96,7 @@ public class CustomerDashboardController extends BaseDashboardController impleme
     private ObservableList<String> cartData = FXCollections.observableArrayList();
     
     private List<CartItem> cartItems = new ArrayList<>();
-    private double cartTotal = 0.0;
+    // private double cartTotal = 0.0;
     
     // Helper class for cart items
     private static class CartItem {
@@ -433,11 +434,19 @@ public class CustomerDashboardController extends BaseDashboardController impleme
         if (paymentService == null) {
             try {
                 // Get the registry that was already established in connectToServices()
-                String[] parts = serverInfo.split(":");
-                String host = parts[0];
-                int port = Integer.parseInt(parts[1]);
+                String host = "localhost";
+                int port = 1099; // Default RMI port
                 
-                Registry registry = LocateRegistry.getRegistry(host, port);
+                // Parse serverInfo if available
+                if (serverInfo != null && serverInfo.contains(":")) {
+                    String[] parts = serverInfo.split(":");
+                    if (parts.length >= 2) {
+                        host = parts[0];
+                        port = Integer.parseInt(parts[1]);
+                    }
+                }
+                
+                Registry registry = LocateRegistry.getRegistry(host, port, new SslRMIClientSocketFactory());
                 
                 // Connect to payment service based on server info
                 String prefix = "HQ_"; // Default to HQ
@@ -450,8 +459,19 @@ public class CustomerDashboardController extends BaseDashboardController impleme
                     prefix = currentUser.getBranchName().toUpperCase() + "_";
                 }
                 
-                paymentService = (PaymentService) registry.lookup(prefix + "PaymentService");
-                logger.info("Connected to {} payment service", prefix);
+                try {
+                    paymentService = (PaymentService) registry.lookup(prefix + "PaymentService");
+                    logger.info("Connected to {} payment service", prefix);
+                } catch (NotBoundException nbe) {
+                    // If branch payment service not found, try HQ as fallback
+                    if (!prefix.equals("HQ_")) {
+                        logger.info("Branch payment service not found, trying HQ payment service as fallback");
+                        paymentService = (PaymentService) registry.lookup("HQ_PaymentService");
+                        logger.info("Connected to HQ payment service as fallback");
+                    } else {
+                        throw nbe;
+                    }
+                }
             } catch (Exception e) {
                 logger.error("Failed to connect to payment service", e);
                 showAlert("Error", "Failed to connect to payment service: " + e.getMessage());

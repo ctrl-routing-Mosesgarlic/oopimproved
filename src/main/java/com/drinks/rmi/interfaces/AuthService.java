@@ -54,4 +54,25 @@ public interface AuthService extends Remote {
      * @throws RemoteException RMI exception if user doesn't have permission
      */
     List<UserDTO> getAllUsers(UserDTO currentUser) throws RemoteException;
+
+    /**
+     * Update all users roles (admin only)
+     * 
+     * @param fromRole The role to update from
+     * @param toRole The role to update to
+     * @param currentUser The current user making the request
+     * @return The number of users updated
+     * @throws RemoteException RMI exception if user doesn't have permission
+     */
+    int updateUserRoles(String fromRole, String toRole, UserDTO currentUser) throws RemoteException;
+    
+    /**
+     * Delete a user (admin only)
+     * 
+     * @param userId The ID of the user to delete
+     * @param currentUser The current user making the request
+     * @return true if user was deleted successfully, false otherwise
+     * @throws RemoteException RMI exception if user doesn't have permission or other error
+     */
+    boolean deleteUser(Long userId, UserDTO currentUser) throws RemoteException;
 }

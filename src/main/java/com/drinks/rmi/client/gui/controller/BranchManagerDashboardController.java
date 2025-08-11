@@ -5,14 +5,14 @@ import com.drinks.rmi.dto.OrderDTO;
 import com.drinks.rmi.dto.StockDTO;
 import com.drinks.rmi.dto.DrinkDTO;
 import com.drinks.rmi.dto.UserDTO;
-import com.drinks.rmi.interfaces.*;
+// import com.drinks.rmi.interfaces.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.LineChart;
+import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -71,7 +71,7 @@ public class BranchManagerDashboardController extends BaseDashboardController im
     @FXML private Button updateOrderStatusButton;
     
     // Sales Chart
-    @FXML private LineChart<String, Number> salesChart;
+    @FXML private BarChart<String, Number> salesChart;
     @FXML private DatePicker startDatePicker;
     @FXML private DatePicker endDatePicker;
     @FXML private Button updateChartButton;

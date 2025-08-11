@@ -29,12 +29,17 @@ public class CustomerReportDTO implements Serializable {
     private int activeCustomers;
     private Map<UserDTO, List<OrderDTO>> customerOrderHistory;
     private List<CustomerOrderSummary> topCustomers;
+    private int loginCount;
+    private List<PaymentDTO> payments;
+    private List<LoginHistoryDTO> loginHistory;
     
     // Default constructor required for serialization
     public CustomerReportDTO() {
         this.orders = new ArrayList<>();
         this.customerOrderHistory = new HashMap<>();
         this.topCustomers = new ArrayList<>();
+        this.payments = new ArrayList<>();
+        this.loginHistory = new ArrayList<>();
     }
     
     public CustomerReportDTO(Long customerId, String customerName, String customerEmail, 
@@ -50,6 +55,8 @@ public class CustomerReportDTO implements Serializable {
         this.orders = new ArrayList<>();
         this.customerOrderHistory = new HashMap<>();
         this.topCustomers = new ArrayList<>();
+        this.payments = new ArrayList<>();
+        this.loginHistory = new ArrayList<>();
     }
     
     // Getters and setters
@@ -163,6 +170,30 @@ public class CustomerReportDTO implements Serializable {
         this.topCustomers = topCustomers;
     }
     
+    public int getLoginCount() {
+        return loginCount;
+    }
+    
+    public void setLoginCount(int loginCount) {
+        this.loginCount = loginCount;
+    }
+    
+    public List<PaymentDTO> getPayments() {
+        return payments;
+    }
+    
+    public void setPayments(List<PaymentDTO> payments) {
+        this.payments = payments;
+    }
+    
+    public List<LoginHistoryDTO> getLoginHistory() {
+        return loginHistory;
+    }
+    
+    public void setLoginHistory(List<LoginHistoryDTO> loginHistory) {
+        this.loginHistory = loginHistory;
+    }
+    
     public static class CustomerOrderSummary {
         private Long customerId;
         private String customerName;
@@ -202,6 +233,9 @@ public class CustomerReportDTO implements Serializable {
                 ", activeCustomers=" + activeCustomers +
                 ", customerOrderHistory=" + customerOrderHistory +
                 ", topCustomers=" + topCustomers +
+                ", loginCount=" + loginCount +
+                ", payments=" + payments +
+                ", loginHistory=" + loginHistory +
                 '}';
     }
 }

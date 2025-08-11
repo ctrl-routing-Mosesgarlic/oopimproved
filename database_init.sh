@@ -14,15 +14,16 @@ if ! systemctl is-active --quiet mysql; then
     sudo systemctl start mysql
 fi
 
-# Execute the initialization script
-if [ -z "$MYSQL_PASS" ]; then
-    echo "Please enter MySQL password for user $MYSQL_USER"
-    mysql -u "$MYSQL_USER" -p -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
-    mysql -u "$MYSQL_USER" -p "$DB_NAME" < "$INIT_FILE"
-else
-    mysql -u "$MYSQL_USER" -p"$MYSQL_PASS" -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
-    mysql -u "$MYSQL_USER" -p"$MYSQL_PASS" "$DB_NAME" < "$INIT_FILE"
-fi
+# Drop existing database if it exists
+mysql -u "$MYSQL_USER" -p"$MYSQL_PASS" -e "DROP DATABASE IF EXISTS $DB_NAME;"
+
+# Create new database
+mysql -u "$MYSQL_USER" -p"$MYSQL_PASS" -e "CREATE DATABASE $DB_NAME;"
+
+# Initialize schema
+mysql -u "$MYSQL_USER" -p"$MYSQL_PASS" "$DB_NAME" < "$INIT_FILE"
+
+echo "Database $DB_NAME has been recreated and initialized"
 
 if [ $? -eq 0 ]; then
     echo "Database $DB_NAME initialized successfully!"

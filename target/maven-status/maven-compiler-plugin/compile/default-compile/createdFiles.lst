@@ -41,6 +41,7 @@ com/drinks/rmi/client/gui/controller/AdminDashboardController$6.class
 com/drinks/rmi/client/gui/controller/AdminDashboardController$11.class
 com/drinks/rmi/client/gui/controller/BranchStaffDashboardController$11.class
 com/drinks/rmi/dto/OrderDTO.class
+com/drinks/rmi/util/UserRoleUpdater$1.class
 com/drinks/rmi/client/gui/controller/BranchManagerDashboardController$6.class
 com/drinks/rmi/client/gui/controller/BranchStaffDashboardController$8.class
 com/drinks/rmi/client/gui/controller/BranchStaffDashboardController$9.class
@@ -52,6 +53,7 @@ com/drinks/rmi/client/gui/controller/AdminDashboardController$12.class
 com/drinks/rmi/server/PaymentServiceImpl.class
 com/drinks/rmi/client/gui/controller/AdminDashboardController$5.class
 com/drinks/rmi/interfaces/NotificationCallback.class
+com/drinks/rmi/util/UserRoleUpdater.class
 com/drinks/rmi/interfaces/AuthService.class
 com/drinks/rmi/client/gui/controller/CustomerSupportDashboardController$3.class
 com/drinks/rmi/dto/PaymentDTO.class
@@ -63,6 +65,7 @@ com/drinks/rmi/client/gui/controller/GlobalManagerDashboardController$1.class
 com/drinks/rmi/dto/PaymentResultDTO.class
 com/drinks/rmi/server/HQServer.class
 com/drinks/rmi/client/gui/controller/AdminDashboardController$1.class
+com/drinks/rmi/dto/LoginHistoryDTO.class
 com/drinks/rmi/interfaces/LoadBalancerService$BranchInfo.class
 com/drinks/rmi/server/StockServiceImpl.class
 com/drinks/rmi/client/gui/controller/AdminDashboardController$4.class
@@ -83,6 +86,7 @@ com/drinks/rmi/client/gui/controller/GlobalManagerDashboardController$4.class
 com/drinks/rmi/client/gui/NotificationCallbackImpl.class
 com/drinks/rmi/client/gui/controller/BranchStaffDashboardController$7.class
 com/drinks/rmi/client/gui/controller/BranchStaffDashboardController$4.class
+com/drinks/rmi/client/gui/controller/AdminDashboardController$14.class
 com/drinks/rmi/client/gui/controller/GlobalManagerDashboardController$3.class
 com/drinks/rmi/client/gui/controller/BranchManagerDashboardController.class
 com/drinks/rmi/dto/CustomerReportDTO$CustomerOrderSummary.class
@@ -90,6 +94,7 @@ com/drinks/rmi/dto/StockDTO.class
 com/drinks/rmi/server/DrinkServiceImpl.class
 com/drinks/rmi/server/security/RoleBasedAccessControl.class
 com/drinks/rmi/client/gui/controller/BranchStaffDashboardController$5.class
+com/drinks/rmi/client/gui/controller/AdminDashboardController$15.class
 com/drinks/rmi/client/gui/controller/BranchManagerDashboardController$9.class
 com/drinks/rmi/client/gui/controller/CustomerDashboardController$3.class
 com/drinks/rmi/interfaces/LoadBalancerService$BranchHealthStatus.class
@@ -109,6 +114,7 @@ com/drinks/rmi/server/ReportServiceImpl.class
 com/drinks/rmi/interfaces/LoadBalancerService.class
 com/drinks/rmi/client/gui/controller/AuditorDashboardController$1.class
 com/drinks/rmi/client/gui/controller/PaymentDialogController.class
+com/drinks/rmi/util/DatabaseSeeder.class
 com/drinks/rmi/client/gui/controller/AuditorDashboardController.class
 com/drinks/rmi/client/gui/controller/BranchManagerDashboardController$2.class
 com/drinks/rmi/interfaces/ReportService.class

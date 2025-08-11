@@ -1,8 +1,11 @@
 package com.drinks.rmi.server;
 
 import com.drinks.rmi.common.DatabaseConfig;
-import com.drinks.rmi.interfaces.*;
-import com.drinks.rmi.server.*;
+import com.drinks.rmi.interfaces.AuthService;
+import com.drinks.rmi.interfaces.DrinkService;
+import com.drinks.rmi.interfaces.OrderService;
+import com.drinks.rmi.interfaces.PaymentService;
+import com.drinks.rmi.interfaces.StockService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,6 +59,7 @@ public class BranchServer {
             DrinkService drinkService = new DrinkServiceImpl();
             StockService stockService = new StockServiceImpl();
             OrderService orderService = new OrderServiceImpl(stockService, drinkService);
+            PaymentService paymentService = new PaymentServiceImpl();
             
             // Bind services to registry with branch-specific names
             String baseUrl = "rmi://" + SERVER_HOST + ":" + rmiPort + "/";
@@ -65,12 +69,14 @@ public class BranchServer {
             Naming.rebind(baseUrl + branchPrefix + "DrinkService", drinkService);
             Naming.rebind(baseUrl + branchPrefix + "StockService", stockService);
             Naming.rebind(baseUrl + branchPrefix + "OrderService", orderService);
+            Naming.rebind(baseUrl + branchPrefix + "PaymentService", paymentService);
             
             logger.info("{} Branch RMI Server services bound successfully:", branchName);
             logger.info("  - AuthService: {}", baseUrl + branchPrefix + "AuthService");
             logger.info("  - DrinkService: {}", baseUrl + branchPrefix + "DrinkService");
             logger.info("  - StockService: {}", baseUrl + branchPrefix + "StockService");
             logger.info("  - OrderService: {}", baseUrl + branchPrefix + "OrderService");
+            logger.info("  - PaymentService: {}", baseUrl + branchPrefix + "PaymentService");
             
             // Initialize stock for this branch if not exists
             initializeBranchStock();
@@ -84,6 +90,7 @@ public class BranchServer {
                     Naming.unbind(baseUrl + branchPrefix + "DrinkService");
                     Naming.unbind(baseUrl + branchPrefix + "StockService");
                     Naming.unbind(baseUrl + branchPrefix + "OrderService");
+                    Naming.unbind(baseUrl + branchPrefix + "PaymentService");
                     
                     logger.info("{} Branch RMI Server shutdown complete", branchName);
                 } catch (Exception e) {

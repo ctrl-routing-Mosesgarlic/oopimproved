@@ -38,6 +38,14 @@ public class PaymentServiceImpl extends UnicastRemoteObject implements PaymentSe
                                           String paymentMethod, String paymentDetails) throws RemoteException {
         logger.info("Processing payment for order {} with amount {} using {}", orderId, amount, paymentMethod);
         
+        // Debug: Log user details
+        logger.info("DEBUG: Payment processing for user - ID: {}, Username: {}, Role: {}, CustomerID: {}, BranchID: {}", 
+            currentUser != null ? currentUser.getId() : "null",
+            currentUser != null ? currentUser.getUsername() : "null", 
+            currentUser != null ? currentUser.getRole() : "null",
+            currentUser != null ? currentUser.getCustomerId() : "null",
+            currentUser != null ? currentUser.getBranchId() : "null");
+        
         // Validate user permissions
         RoleBasedAccessControl.checkPermission(currentUser, "payment:create");
         
@@ -135,7 +143,7 @@ public class PaymentServiceImpl extends UnicastRemoteObject implements PaymentSe
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     Long customerId = rs.getLong("customer_id");
-                    return currentUser.getCustomerId().equals(customerId.toString());
+                    return currentUser.getCustomerId().equals(customerId);
                 }
                 return false;
             }
