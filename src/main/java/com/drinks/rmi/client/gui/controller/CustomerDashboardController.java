@@ -204,8 +204,9 @@ public class CustomerDashboardController extends BaseDashboardController impleme
             // Determine server type and connection details based on serverInfo
             if (serverInfo.contains("Headquarters") || serverInfo.contains("HQ")) {
                 // HQ server uses SSL on port 1099
+                String serverHost = System.getProperty("rmi.server.host", "localhost");
                 SslRMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
-                registry = LocateRegistry.getRegistry("localhost", 1099, socketFactory);
+                registry = LocateRegistry.getRegistry(serverHost, 1099, socketFactory);
                 servicePrefix = "HQ_";
                 
                 // Connect to HQ services
@@ -222,7 +223,8 @@ public class CustomerDashboardController extends BaseDashboardController impleme
                 servicePrefix = branchName.toUpperCase() + "_";
                 
                 // Branch servers use regular RMI
-                registry = LocateRegistry.getRegistry("localhost", port);
+                String serverHost = System.getProperty("rmi.server.host", "localhost");
+                registry = LocateRegistry.getRegistry(serverHost, port);
                 
                 // Connect to branch services (no LoadBalancerService for branches)
                 drinkService = (DrinkService) registry.lookup(servicePrefix + "DrinkService");
@@ -434,7 +436,7 @@ public class CustomerDashboardController extends BaseDashboardController impleme
         if (paymentService == null) {
             try {
                 // Get the registry that was already established in connectToServices()
-                String host = "localhost";
+                String host = System.getProperty("rmi.server.host", "localhost");
                 int port = 1099; // Default RMI port
                 
                 // Parse serverInfo if available

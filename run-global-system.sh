@@ -298,12 +298,13 @@ run_global_gui() {
     log_message "INFO" "Starting Global GUI client from $location connecting to server: $server_ip"
     
     # Set system properties for global GUI
-    export JAVA_OPTS="-Djava.rmi.server.hostname=$server_ip -Djava.net.preferIPv4Stack=true"
+    export JAVA_OPTS="-Djava.rmi.server.hostname=$server_ip -Drmi.server.host=$server_ip -Djava.net.preferIPv4Stack=true"
     
     echo -e "${GREEN}🌍 Global GUI Client starting from $location...${NC}"
     echo -e "${YELLOW}Connecting to: rmi://$server_ip${NC}"
     
     mvn javafx:run -Djava.rmi.server.hostname="$server_ip" \
+        -Drmi.server.host="$server_ip" \
         -Djava.net.preferIPv4Stack=true >> "$RECORD_LOG" 2>> "$ERROR_LOG"
 }
 

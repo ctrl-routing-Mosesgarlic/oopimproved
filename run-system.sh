@@ -319,33 +319,58 @@ select_gui_server() {
     
     read -p "Enter your choice (1-6): " choice
     
+    # Ask for connection type (local vs external)
+    echo
+    echo -e "${YELLOW}Select connection type:${NC}"
+    echo "1) Local Network (localhost/LAN)"
+    echo "2) External/Remote Server (WAN/Internet)"
+    read -p "Enter connection type (1-2): " conn_type
+    
+    local server_ip
     local current_ip=$(get_local_ip)
+    
+    if [ "$conn_type" == "1" ]; then
+        # Local connection - use current machine's IP
+        server_ip="$current_ip"
+        echo -e "${GREEN}Using local IP: $server_ip${NC}"
+    elif [ "$conn_type" == "2" ]; then
+        # External connection - ask for remote IP
+        read -p "Enter remote server IP address: " server_ip
+        echo -e "${GREEN}Using remote IP: $server_ip${NC}"
+    else
+        echo -e "${RED}Invalid connection type. Defaulting to local.${NC}"
+        server_ip="$current_ip"
+    fi
     
     case $choice in
         1)
-            log_message "INFO" "Connecting GUI to HQ Server at $current_ip:1099"
-            run_gui "$current_ip"
+            log_message "INFO" "Connecting GUI to HQ Server at $server_ip:1099"
+            run_gui "$server_ip"
             ;;
         2)
-            log_message "INFO" "Connecting GUI to Nairobi Branch at $current_ip:1103"
-            run_gui "$current_ip"
+            log_message "INFO" "Connecting GUI to Nairobi Branch at $server_ip:1103"
+            run_gui "$server_ip"
             ;;
         3)
-            log_message "INFO" "Connecting GUI to Kisumu Branch at $current_ip:1102"
-            run_gui "$current_ip"
+            log_message "INFO" "Connecting GUI to Kisumu Branch at $server_ip:1102"
+            run_gui "$server_ip"
             ;;
         4)
-            log_message "INFO" "Connecting GUI to Mombasa Branch at $current_ip:1101"
-            run_gui "$current_ip"
+            log_message "INFO" "Connecting GUI to Mombasa Branch at $server_ip:1101"
+            run_gui "$server_ip"
             ;;
         5)
-            log_message "INFO" "Connecting GUI to Nakuru Branch at $current_ip:1100"
-            run_gui "$current_ip"
+            log_message "INFO" "Connecting GUI to Nakuru Branch at $server_ip:1100"
+            run_gui "$server_ip"
             ;;
         6)
-            read -p "Enter server IP address: " custom_ip
-            log_message "INFO" "Connecting GUI to custom server at $custom_ip"
-            run_gui "$custom_ip"
+            if [ "$conn_type" == "2" ]; then
+                # For custom IP with external connection, ask for specific IP again
+                read -p "Enter custom server IP address: " custom_ip
+                server_ip="$custom_ip"
+            fi
+            log_message "INFO" "Connecting GUI to custom server at $server_ip"
+            run_gui "$server_ip"
             ;;
         *)
             log_message "ERROR" "Invalid server selection"

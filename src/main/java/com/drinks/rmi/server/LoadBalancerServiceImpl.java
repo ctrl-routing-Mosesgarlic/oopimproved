@@ -206,7 +206,9 @@ public class LoadBalancerServiceImpl extends UnicastRemoteObject implements Load
             String branchName = entry.getKey();
             int port = entry.getValue();
             
-            BranchInfo branchInfo = new BranchInfo(branchName, "localhost", port);
+            // Use configurable host from system property, default to localhost for backward compatibility
+            String branchHost = System.getProperty("java.rmi.server.hostname", "localhost");
+            BranchInfo branchInfo = new BranchInfo(branchName, branchHost, port);
             branchInfo.setStats(new BranchStats()); // Initialize with default stats
             branches.put(branchName, branchInfo);
             lastHeartbeats.put(branchName, System.currentTimeMillis());

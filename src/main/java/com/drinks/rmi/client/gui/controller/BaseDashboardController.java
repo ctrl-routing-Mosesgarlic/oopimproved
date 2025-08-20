@@ -85,7 +85,8 @@ public abstract class BaseDashboardController implements DashboardController {
                 servicePrefix = branchName.toUpperCase() + "_";
                 
                 // Branch servers use regular RMI (no SSL)
-                registry = LocateRegistry.getRegistry("localhost", branchPort);
+                String serverHost = System.getProperty("rmi.server.host", "localhost");
+                registry = LocateRegistry.getRegistry(serverHost, branchPort);
                 
                 logger.info("Connecting to {} branch server on port {}", branchName, branchPort);
                 
@@ -95,16 +96,18 @@ public abstract class BaseDashboardController implements DashboardController {
                       currentUser.getRole().equals("auditor")) {
                 
                 // HQ roles connect to HQ server with SSL
+                String serverHost = System.getProperty("rmi.server.host", "localhost");
                 SslRMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
-                registry = LocateRegistry.getRegistry("localhost", 1099, socketFactory);
+                registry = LocateRegistry.getRegistry(serverHost, 1099, socketFactory);
                 servicePrefix = "HQ_";
                 
                 logger.info("Connecting to HQ server with SSL");
                 
             } else {
                 // Default to HQ for unknown cases
+                String serverHost = System.getProperty("rmi.server.host", "localhost");
                 SslRMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
-                registry = LocateRegistry.getRegistry("localhost", 1099, socketFactory);
+                registry = LocateRegistry.getRegistry(serverHost, 1099, socketFactory);
                 servicePrefix = "HQ_";
             }
             

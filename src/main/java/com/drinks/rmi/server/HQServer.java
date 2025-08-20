@@ -23,7 +23,8 @@ public class HQServer {
     
     private static final Logger logger = LoggerFactory.getLogger(HQServer.class);
     private static final int RMI_PORT = 1099;
-    private static final String SERVER_HOST = "localhost";
+    // Get server host from system property, default to localhost for backward compatibility
+    private static final String SERVER_HOST = System.getProperty("java.rmi.server.hostname", "localhost");
     private static final String SERVICE_VERSION = "v1";
     
     // SSL Configuration

@@ -398,10 +398,10 @@ call :log_message "INFO" "Starting Global GUI Client from %client_location%"
 call :log_message "INFO" "Connecting to: %target_server_name% at %target_server_ip%:%target_server_port%"
 
 REM Set system properties for global connection
-set JAVA_OPTS=-Djava.rmi.server.hostname=%target_server_ip% -Djava.net.preferIPv4Stack=true
+set JAVA_OPTS=-Djava.rmi.server.hostname=%target_server_ip% -Drmi.server.host=%target_server_ip% -Djava.net.preferIPv4Stack=true
 
 REM Start GUI Client
-mvn javafx:run 2>>%ERROR_LOG%
+mvn javafx:run -Drmi.server.host=%target_server_ip% 2>>%ERROR_LOG%
 
 goto :eof
 

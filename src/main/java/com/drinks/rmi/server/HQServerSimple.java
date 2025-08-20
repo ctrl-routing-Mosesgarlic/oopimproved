@@ -19,7 +19,8 @@ public class HQServerSimple {
     
     private static final Logger logger = LoggerFactory.getLogger(HQServerSimple.class);
     private static final int RMI_PORT = 1099;
-    private static final String SERVER_HOST = "localhost";
+    // Get server host from system property, default to localhost for backward compatibility
+    private static final String SERVER_HOST = System.getProperty("java.rmi.server.hostname", "localhost");
     
     // Service instances
     private static AuthService authService;

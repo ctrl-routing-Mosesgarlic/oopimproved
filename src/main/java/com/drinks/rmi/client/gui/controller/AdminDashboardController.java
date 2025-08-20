@@ -294,7 +294,8 @@ public class AdminDashboardController implements DashboardController, Initializa
     
     private void connectToServices() {
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099, new javax.rmi.ssl.SslRMIClientSocketFactory());
+            String serverHost = System.getProperty("rmi.server.host", "localhost");
+            Registry registry = LocateRegistry.getRegistry(serverHost, 1099, new javax.rmi.ssl.SslRMIClientSocketFactory());
             
             drinkService = (DrinkService) registry.lookup("HQ_DrinkService");
             reportService = (ReportService) registry.lookup("HQ_ReportService");
