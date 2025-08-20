@@ -265,10 +265,10 @@ run_gui() {
     local server_ip=$1
     log_message "INFO" "Starting GUI client connecting to server: $server_ip"
     
-    # Set system properties for GUI
-    export JAVA_OPTS="-Djava.rmi.server.hostname=$server_ip"
+    # Set system properties for GUI (both old and new property names for compatibility)
+    export JAVA_OPTS="-Djava.rmi.server.hostname=$server_ip -Drmi.server.host=$server_ip"
     
-    mvn javafx:run -Djava.rmi.server.hostname="$server_ip" >> "$RECORD_LOG" 2>> "$ERROR_LOG"
+    mvn javafx:run -Djava.rmi.server.hostname="$server_ip" -Drmi.server.host="$server_ip" >> "$RECORD_LOG" 2>> "$ERROR_LOG"
 }
 
 # Function to select branch and run it directly

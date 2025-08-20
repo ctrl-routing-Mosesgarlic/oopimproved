@@ -652,8 +652,8 @@ REM Function to run GUI
 :run_gui
 set server_ip=%1
 call :log_message "INFO" "Starting GUI client connecting to server: %server_ip%"
-set JAVA_OPTS=-Djava.rmi.server.hostname=%server_ip%
-mvn javafx:run -Djava.rmi.server.hostname=%server_ip% >>%RECORD_LOG% 2>>%ERROR_LOG%
+set JAVA_OPTS=-Djava.rmi.server.hostname=%server_ip% -Drmi.server.host=%server_ip%
+mvn javafx:run -Djava.rmi.server.hostname=%server_ip% -Drmi.server.host=%server_ip% >>%RECORD_LOG% 2>>%ERROR_LOG%
 goto :eof
 
 REM Function to select branch and run it directly

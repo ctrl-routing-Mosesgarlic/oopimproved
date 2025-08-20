@@ -176,7 +176,10 @@ public class LoginController implements Initializable {
             }
         }
         
-        logger.info("Connecting to {} on port {}", serverType, port);
+        // Get server hostname from system property, default to localhost
+        String serverHost = System.getProperty("rmi.server.host", "localhost");
+        
+        logger.info("Connecting to {} on {}:{}", serverType, serverHost, port);
         
         // Enhanced connection with retry logic
         int maxRetries = 3;
@@ -186,7 +189,7 @@ public class LoginController implements Initializable {
         for (int attempt = 1; attempt <= maxRetries; attempt++) {
             try {
                 // Get service from pool instead of creating new connection
-                authService = getAuthService("localhost", port);
+                authService = getAuthService(serverHost, port);
                 return authService.login(username, password);
                 
             } catch (Exception e) {
