@@ -1,28 +1,54 @@
 # Drink Business RMI System
 
-A Java RMI-based distributed system for a drinks company with headquarters (HQ) and 4 branch servers supporting role-based access, stock management, ordering, and reporting.
+A distributed Java RMI-based drink business management system with SSL security, featuring headquarters (HQ) server, branch servers, and a JavaFX GUI client with comprehensive automation scripts for easy deployment across multiple machines.
+
+## 🚀 Quick Start with Automation Scripts
+
+### For Linux/macOS Users
+```bash
+# Make the script executable
+chmod +x run-system.sh
+
+# Run the system manager
+./run-system.sh
+```
+
+### For Windows Users
+```cmd
+# Run the system manager
+run-system.bat
+```
+
+The automation scripts provide:
+- **Dynamic IP Detection**: Automatically detects your network IP for multi-machine deployment
+- **Interactive Menus**: Choose between HQ Server, Branch Servers, or GUI Client
+- **Database Seeder Integration**: Option to seed database before starting servers
+- **Server Selection for GUI**: Choose which server to connect to when running the client
+- **Comprehensive Logging**: All activities logged to `record.log`, errors to `errors.log`
+- **Cross-Platform Support**: Works on Linux, macOS, and Windows
 
 ## 🏗️ System Architecture
 
 ### Main Server (Headquarters)
-- Central RMI server on port **1099**
+- **SSL-secured RMI server** on port **1099**
 - Manages global data: drinks, customers, users, branches
-- Hosts role-based dashboards for: Admin, Customer Support, Auditor, Global Manager
-- Provides comprehensive reporting capabilities
+- Hosts JavaFX GUI dashboards for: Admin, Customer Support, Auditor, Global Manager
+- Provides comprehensive reporting and user management capabilities
 
 ### Branch Servers
-- **Nakuru Branch**: Port **1100**
-- **Mombasa Branch**: Port **1101** 
-- **Kisumu Branch**: Port **1102**
 - **Nairobi Branch**: Port **1103**
+- **Kisumu Branch**: Port **1102** 
+- **Mombasa Branch**: Port **1101**
+- **Nakuru Branch**: Can run as HQ or Branch server
 
 Each branch acts as a standalone RMI server handling local stock, order placement, and customer access.
 
-### Client Application
-- Command-line interface with role-based menus
-- User login portal with authentication
-- Access control and dashboard based on user role
-- Customers can place orders via branch or HQ
+### JavaFX GUI Client
+- Modern JavaFX interface with role-based dashboards
+- SSL-secured connections to servers
+- Real-time order management and stock tracking
+- User authentication and authorization
+- Dynamic server selection and connection
 
 ## 👥 User Roles and Access Levels
 
@@ -36,16 +62,71 @@ Each branch acts as a standalone RMI server handling local stock, order placemen
 | Branch Staff | Branch | Place orders and update stock |
 | Customer | HQ or Branch | Browse drinks and place orders |
 
+## 🤖 Automation Scripts Usage
+
+### Script Features
+
+#### Dynamic IP Detection
+- Automatically detects your network IP address
+- Works across different WiFi networks without manual configuration
+- Falls back to localhost if network IP cannot be detected
+
+#### Interactive Server Selection
+- **HQ Server**: Runs the main headquarters server with SSL
+- **Branch Server**: Choose from Nairobi, Kisumu, Mombasa, or Nakuru
+- **GUI Client**: Select which server to connect to
+- **Database Seeder**: Initialize database with sample data
+
+#### Multi-Machine Deployment
+Perfect for running on multiple laptops/computers:
+- **Laptop 1**: Run HQ Server
+- **Laptop 2**: Run Nairobi Branch
+- **Laptop 3**: Run GUI Client connecting to any server
+- **Laptop 4**: Run another GUI Client or branch
+
+### Script Menu Options
+
+1. **Run HQ Server**
+   - Prompts to run database seeder first
+   - Starts SSL-secured HQ server on port 1099
+   - Automatically uses detected IP address
+
+2. **Run Branch Server**
+   - Prompts to run database seeder first
+   - Choose branch: Nairobi (1103), Kisumu (1102), Mombasa (1101), or Nakuru (HQ mode)
+   - Automatically configures IP and port
+
+3. **Run GUI Client**
+   - Select server to connect to:
+     - Local HQ Server
+     - Nairobi Branch
+     - Kisumu Branch  
+     - Mombasa Branch
+     - Custom IP address
+   - Launches JavaFX GUI with SSL connections
+
+4. **Run Database Seeder Only**
+   - Initializes database with sample data
+   - Creates users, drinks, branches, and sample orders
+
+### Logging System
+
+- **record.log**: All system activities, server starts, connections
+- **errors.log**: Error messages, exceptions, and failures
+- Timestamped entries for easy debugging
+- Color-coded console output for better visibility
+
 ## 🗄️ Database Schema
 
 The system uses MySQL database `drinkdb` with the following tables:
 - `customers` - Customer information
-- `branches` - Branch locations (Nakuru, Mombasa, Kisumu, Nairobi)
+- `branches` - Branch locations (Nairobi, Mombasa, Kisumu, Nakuru)
 - `drinks` - Available drinks and prices
 - `stocks` - Inventory management per branch
 - `orders` - Customer orders
 - `order_items` - Individual items in orders
 - `users` - Authentication and role management
+- `payments` - Payment processing and tracking
 
 ## 🚀 Getting Started
 
@@ -53,6 +134,7 @@ The system uses MySQL database `drinkdb` with the following tables:
 - Java 17 or higher
 - MySQL 8.0 or higher
 - Maven 3.6 or higher
+- JavaFX runtime (included in OpenJDK 17+)
 
 ### 1. Database Setup
 
@@ -66,51 +148,51 @@ The system uses MySQL database `drinkdb` with the following tables:
    FLUSH PRIVILEGES;
    ```
 
-3. **Initialize the database**:
-   ```bash
-   mysql -u root -p12345 < database/init.sql
-   ```
+### 2. Quick Start with Automation
 
-### 2. Build the Project
-
+#### Linux/macOS:
 ```bash
-cd drink-business-rmi
-mvn clean compile
+# Make script executable
+chmod +x run-system.sh
+
+# Run the system manager
+./run-system.sh
 ```
 
-### 3. Start the Servers
-
-#### Start HQ Server (Terminal 1)
-```bash
-mvn exec:java -Dexec.mainClass="com.drinks.rmi.server.HQServer"
+#### Windows:
+```cmd
+run-system.bat
 ```
 
-#### Start Branch Servers (Separate Terminals)
+### 3. Manual Commands (Alternative)
 
-**Nakuru Branch (Terminal 2)**:
+If you prefer running commands manually:
+
+#### HQ Server:
 ```bash
-mvn exec:java -Dexec.mainClass="com.drinks.rmi.server.BranchServer" -Dexec.args="Nakuru 1100"
+mvn compile exec:java -Dexec.mainClass="com.drinks.rmi.server.HQServer" -Dexec.args="config/hq-keystore.jks password123"
 ```
 
-**Mombasa Branch (Terminal 3)**:
+#### Branch Servers:
 ```bash
-mvn exec:java -Dexec.mainClass="com.drinks.rmi.server.BranchServer" -Dexec.args="Mombasa 1101"
+# Nairobi Branch
+java -cp target/drink-business-rmi-1.0.0.jar com.drinks.rmi.server.BranchServer Nairobi 1103
+
+# Kisumu Branch  
+java -cp target/drink-business-rmi-1.0.0.jar com.drinks.rmi.server.BranchServer Kisumu 1102
+
+# Mombasa Branch
+java -cp target/drink-business-rmi-1.0.0.jar com.drinks.rmi.server.BranchServer Mombasa 1101
 ```
 
-**Kisumu Branch (Terminal 4)**:
+#### GUI Client:
 ```bash
-mvn exec:java -Dexec.mainClass="com.drinks.rmi.server.BranchServer" -Dexec.args="Kisumu 1102"
+mvn javafx:run
 ```
 
-**Nairobi Branch (Terminal 5)**:
+#### Database Seeder:
 ```bash
-mvn exec:java -Dexec.mainClass="com.drinks.rmi.server.BranchServer" -Dexec.args="Nairobi 1103"
-```
-
-### 4. Launch Client Application
-
-```bash
-mvn exec:java -Dexec.mainClass="com.drinks.rmi.client.DrinkBusinessClient"
+java -cp target/drink-business-rmi-1.0.0.jar com.drinks.rmi.util.DatabaseSeeder
 ```
 
 ## 🔐 Sample Users and Login Details
@@ -127,242 +209,211 @@ All users have the password: **password123**
 
 ### Branch Users
 | Username | Role | Branch | Description |
-|----------|------|--------|-------------|
-| `nakuru_manager` | Manager | Nakuru | Branch management |
-| `mombasa_manager` | Manager | Mombasa | Branch management |
-| `kisumu_manager` | Manager | Kisumu | Branch management |
+|----------|------|--------|-----------|
 | `nairobi_manager` | Manager | Nairobi | Branch management |
-| `nakuru_staff` | Staff | Nakuru | Daily operations |
-| `mombasa_staff` | Staff | Mombasa | Daily operations |
-| `kisumu_staff` | Staff | Kisumu | Daily operations |
+| `kisumu_manager` | Manager | Kisumu | Branch management |
+| `mombasa_manager` | Manager | Mombasa | Branch management |
+| `nakuru_manager` | Manager | Nakuru | Branch management |
 | `nairobi_staff` | Staff | Nairobi | Daily operations |
+| `kisumu_staff` | Staff | Kisumu | Daily operations |
+| `mombasa_staff` | Staff | Mombasa | Daily operations |
+| `nakuru_staff` | Staff | Nakuru | Daily operations |
 
 ### Customer Users
-| Username | Role | Customer Name |
-|----------|------|---------------|
-| `customer1` | Customer | John Doe |
-| `customer2` | Customer | Jane Smith |
-| `customer3` | Customer | Mike Johnson |
-
-## 📡 RMI Services
-
-### Common Remote Interfaces
-- **AuthService** - User authentication and management
-- **DrinkService** - Drink catalog management
-- **StockService** - Inventory management
-- **OrderService** - Order processing
-- **ReportService** - Business reporting (HQ only)
-
-### Service Endpoints
-
-#### HQ Server (localhost:1099)
-- `HQ_AuthService`
-- `HQ_DrinkService`
-- `HQ_StockService`
-- `HQ_OrderService`
-- `HQ_ReportService`
-
-#### Branch Servers
-- `NAKURU_AuthService` (localhost:1100)
-- `MOMBASA_AuthService` (localhost:1101)
-- `KISUMU_AuthService` (localhost:1102)
-- `NAIROBI_AuthService` (localhost:1103)
-- *(Similar pattern for other services)*
+| Username | Customer Name | Description |
+|----------|---------------|-------------|
+| `john_doe` | John Doe | Sample customer with orders |
+| `jane_smith` | Jane Smith | Sample customer with orders |
+| `mike_johnson` | Mike Johnson | Sample customer with orders |
 
 ## 💡 Sample Use Cases
 
-### Customer Ordering
-1. Customer logs in with username/password
-2. Selects server (HQ or specific branch)
-3. Views available drinks
-4. Places order with quantities
-5. System checks stock availability
-6. Order is processed and stock is updated
+### Multi-Machine Deployment Scenario
+1. **Laptop 1 (HQ Server)**: Run `./run-system.sh` → Choose "Run HQ Server" → Seed database
+2. **Laptop 2 (Nairobi Branch)**: Run `./run-system.sh` → Choose "Run Branch Server" → Select "Nairobi"
+3. **Laptop 3 (GUI Client)**: Run `./run-system.sh` → Choose "Run GUI Client" → Select server to connect to
+4. **Laptop 4 (Another Client)**: Same as Laptop 3, can connect to any running server
+
+### Customer Ordering Workflow
+1. Customer logs in through GUI with username/password
+2. Selects drinks from available catalog
+3. Places order with quantities
+4. System checks stock availability across branches
+5. Order is processed and stock is updated
+6. Payment is processed
 7. Customer receives confirmation
 
 ### Branch Manager Operations
-1. Manager logs into branch server
-2. Views current stock levels
+1. Manager logs into branch server via GUI
+2. Views current stock levels for their branch
 3. Updates inventory quantities
-4. Reviews branch orders
-5. Generates local reports
+4. Reviews branch-specific orders
+5. Generates local sales reports
 
 ### Admin Operations
-1. Admin logs into HQ server
-2. Manages global drink catalog
-3. Creates new staff users
-4. Views system-wide reports
-5. Monitors all branch activities
+1. Admin logs into HQ server via GUI
+2. Manages user accounts across all branches
+3. Adds/updates drink catalog globally
+4. Views system-wide reports and analytics
+5. Monitors all branch performance
+6. Processes payments and financial reports
 
-## 🛠️ Technical Details
+## 🌐 Network Configuration & Multi-Machine Setup
 
-### Architecture Components
-- **RMI Registry**: Service discovery and binding
-- **Connection Pooling**: HikariCP for database connections
-- **Password Security**: BCrypt hashing
-- **Logging**: SLF4J with Logback
-- **Serialization**: Custom DTOs for data transfer
+### Dynamic IP Detection
+The automation scripts automatically detect your network IP, making it easy to:
+- Switch between different WiFi networks
+- Deploy across multiple machines without manual IP configuration
+- Handle network changes seamlessly
 
-### Database Configuration
-- **Host**: localhost:3306
-- **Database**: drinkdb
-- **Username**: root
-- **Password**: 12345
+### Deployment Scenarios
+
+#### Single Machine Testing
+- All services run on localhost with different ports
+- Perfect for development and testing
+
+#### Multi-Machine Production
+- **HQ Server**: Any machine on network (port 1099, SSL secured)
+- **Branch Servers**: Different machines (ports 1101-1103)
+- **GUI Clients**: Any machine, connects to any server
+- **Database**: Typically on HQ server machine
 
 ### Port Configuration
-- **HQ Server**: 1099
-- **Nakuru Branch**: 1100
-- **Mombasa Branch**: 1101
-- **Kisumu Branch**: 1102
-- **Nairobi Branch**: 1103
-
-## Distributed System Architecture
-
-This application uses Java RMI for distributed communication between:
-- 1 Main HQ Server (port 1099)
-- Multiple Branch Servers (ports 1100-1103)
-- Multiple GUI Clients
-
-Key features:
-- Secure SSL communication
-- Service versioning (v1)
-- Heartbeat monitoring
-- Connection pooling
-- Automatic failover and retry logic
-
-## Deployment Instructions
-
-### 1. HQ Server Setup
-```bash
-java -Djavax.net.ssl.keyStore=config/hq-keystore.jks \
-     -Djavax.net.ssl.keyStorePassword=securepassword123 \
-     -jar drink-business-rmi.jar
-```
-
-### 2. Branch Server Setup (Example for Nakuru)
-```bash
-java -Djavax.net.ssl.trustStore=config/branch-truststore.jks \
-     -Dmain.server=hq.example.com \
-     -jar drink-business-branch.jar Nakuru
-```
-
-### 3. Client Application
-```bash
-java -Djavax.net.ssl.trustStore=config/client-truststore.jks \
-     -jar drink-business-client.jar
-```
-
-## SSL Certificate Setup
-
-1. Generate HQ Server Keystore:
-```bash
-keytool -genkeypair -alias hq-server -keyalg RSA -keystore hq-keystore.jks
-```
-
-2. Export HQ Public Certificate:
-```bash
-keytool -exportcert -alias hq-server -file hq-cert.cer -keystore hq-keystore.jks
-```
-
-3. Import HQ Certificate into Branch/Client Truststores:
-```bash
-keytool -importcert -alias hq-server -file hq-cert.cer -keystore branch-truststore.jks
-```
-
-## Database Configuration
-
-- MySQL database expected on HQ server
-- Connection settings in `database.properties`
-- Sample data loaded from `database/init.sql`
-
-## Monitoring
-
-- Heartbeats every 5 seconds
-- 10 second timeout marks branch as offline
-- Load balancer tracks active connections and server load
-
-## 📈 Future Enhancements
-
-- GUI client using JavaFX
-- Real-time notifications
-- Advanced reporting features
-- Mobile client support
-- Enhanced security features
-- Load balancing capabilities
-
-## 📞 Support
-
-For technical support or questions about the system:
-1. Check the troubleshooting section
-2. Review server logs for error messages
-3. Verify database connectivity
-4. Ensure all required services are running
-
----
-
-**Note**: This system is designed for educational purposes and demonstrates RMI-based distributed computing concepts. For production use, additional security, error handling, and scalability features should be implemented.
+| Service | Port | SSL | Description |
+|---------|------|-----|-------------|
+| HQ Server | 1099 | ✅ | Main headquarters server |
+| Nairobi Branch | 1103 | ❌ | Branch server |
+| Kisumu Branch | 1102 | ❌ | Branch server |
+| Mombasa Branch | 1101 | ❌ | Branch server |
+| MySQL Database | 3306 | ❌ | Database server |
 
 ## 📊 Available Drinks
 
-| ID | Name | Price (KES) |
-|----|------|-------------|
-| 1 | Soda | 50.00 |
-| 2 | Milk | 70.00 |
-| 3 | Water | 30.00 |
-| 4 | Alcohol | 150.00 |
-| 5 | Juice | 80.00 |
-| 6 | Coffee | 120.00 |
-| 7 | Tea | 60.00 |
-| 8 | Energy Drink | 200.00 |
+| ID | Name | Price (KES) | Category |
+|----|------|-------------|----------|
+| 1 | Soda | 50.00 | Soft Drink |
+| 2 | Milk | 70.00 | Dairy |
+| 3 | Water | 30.00 | Beverage |
+| 4 | Alcohol | 150.00 | Alcoholic |
+| 5 | Juice | 80.00 | Fruit Drink |
+| 6 | Coffee | 120.00 | Hot Beverage |
+| 7 | Tea | 60.00 | Hot Beverage |
+| 8 | Energy Drink | 200.00 | Energy |
 
 ## 🔧 Troubleshooting
 
-### Common Issues
+### Script-Related Issues
+
+1. **Script Permission Denied (Linux/macOS)**
+   ```bash
+   chmod +x run-system.sh
+   ```
+
+2. **IP Detection Failed**
+   - Script falls back to localhost automatically
+   - Check network connectivity
+   - Manually specify IP when prompted for "Custom IP"
+
+3. **Maven Not Found**
+   - Install Maven: `sudo apt install maven` (Ubuntu) or `brew install maven` (macOS)
+   - Ensure Maven is in system PATH
+
+4. **Java Not Found**
+   - Install OpenJDK 17+: `sudo apt install openjdk-17-jdk`
+   - Set JAVA_HOME environment variable
+
+### System Issues
 
 1. **Database Connection Failed**
-   - Ensure MySQL is running
+   - Ensure MySQL is running: `sudo systemctl start mysql`
    - Verify credentials (root/12345)
    - Check if database `drinkdb` exists
+   - Run database seeder through script menu
 
 2. **RMI Registry Errors**
    - Ensure ports 1099-1103 are available
-   - Check firewall settings
+   - Check firewall settings: `sudo ufw allow 1099:1103/tcp`
    - Verify Java RMI is properly configured
 
-3. **Service Not Found**
-   - Confirm servers are running
-   - Check RMI registry bindings
-   - Verify service names match exactly
+3. **SSL Connection Issues**
+   - Verify keystore files exist in `config/` directory
+   - Check keystore password (password123)
+   - Ensure SSL certificates are properly generated
 
-4. **Login Failed**
-   - Use correct username/password combinations
-   - Ensure database has sample users
-   - Check password hashing implementation
+4. **GUI Connection Failed**
+   - Verify target server is running
+   - Check IP address and port configuration
+   - Try connecting to localhost first
+   - Review error logs in `errors.log`
 
-### Logs Location
-- Server logs are displayed in console
-- Client logs are displayed in console
-- Database errors are logged with full stack traces
+### Log Analysis
+
+- **record.log**: Check for successful server starts and connections
+- **errors.log**: Look for specific error messages and stack traces
+- Console output: Real-time status and error information
 
 ## 📁 Project Structure
 
 ```
 drink-business-rmi/
+├── run-system.sh           # Linux/macOS automation script
+├── run-system.bat          # Windows automation script
+├── record.log              # System activity log
+├── errors.log              # Error log
 ├── src/main/java/com/drinks/rmi/
-│   ├── interfaces/          # RMI interfaces and DTOs
-│   ├── server/             # Server implementations
-│   ├── client/             # Client application
-│   └── common/             # Shared utilities
+│   ├── interfaces/         # RMI interfaces and DTOs
+│   ├── server/            # HQ and Branch server implementations
+│   ├── gui/               # JavaFX GUI application
+│   ├── services/          # Business logic services
+│   ├── util/              # Database utilities and seeder
+│   └── security/          # Authentication and authorization
+├── config/
+│   ├── hq-keystore.jks    # SSL keystore for HQ server
+│   └── database.properties # Database configuration
 ├── database/
-│   └── init.sql            # Database initialization script
-├── pom.xml                 # Maven configuration
-└── README.md              # This file
+│   ├── init.sql           # Database schema and initial data
+│   └── migrations/        # SQL migration files
+├── target/                # Compiled classes and JAR files
+├── pom.xml               # Maven configuration
+└── README.md             # This documentation
 ```
 
 ## 🚦 System Status Verification
 
-After starting all servers, you should see:
-- HQ Server: "HQ RMI Server is running..."
-- Branch Servers: "[Branch] Branch RMI Server is running..."
-- Client: Connection successful messages
-# oopimproved
+After using the automation scripts, you should see:
+
+### Successful HQ Server Start:
+```
+INFO: Detected IP address: 192.168.1.100
+INFO: Starting HQ Server on IP: 192.168.1.100
+HQ RMI Server is running on 192.168.1.100:1099...
+```
+
+### Successful Branch Server Start:
+```
+INFO: Starting Nairobi Branch Server on 192.168.1.100:1103
+Nairobi Branch RMI Server is running on 192.168.1.100:1103...
+```
+
+### Successful GUI Client Start:
+```
+INFO: Starting GUI client connecting to server: 192.168.1.100
+JavaFX GUI launched successfully
+```
+
+## 🎯 Key Features
+
+- ✅ **SSL-Secured RMI Communication**
+- ✅ **Dynamic IP Detection & Multi-Machine Support**
+- ✅ **Interactive Automation Scripts (Linux & Windows)**
+- ✅ **JavaFX GUI with Role-Based Dashboards**
+- ✅ **Comprehensive Database Migration System**
+- ✅ **Real-Time Order Management**
+- ✅ **Stock Management Across Branches**
+- ✅ **Payment Processing Integration**
+- ✅ **Detailed Logging and Error Tracking**
+- ✅ **User Authentication and Authorization**
+
+---
+
+**Note**: This system demonstrates advanced Java RMI concepts, SSL security, distributed computing, and modern GUI development. The automation scripts make it production-ready for multi-machine deployment scenarios.
