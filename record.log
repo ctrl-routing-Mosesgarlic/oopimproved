@@ -4809,3 +4809,1017 @@ java.sql.SQLSyntaxErrorException: Unknown column 'action_url' in 'INSERT INTO'
 10:44:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
 10:44:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
 10:44:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:44:44.715 [pool-1-thread-2] DEBUG com.drinks.rmi.server.NotificationServiceImpl -- Removed inactive callback for user: 13
+10:44:44.715 [pool-1-thread-2] INFO com.drinks.rmi.server.NotificationServiceImpl -- Cleaned up 1 inactive notification callbacks
+10:44:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:44:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:44:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:44:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:44:48.194 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:44:48.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:44:48.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:44:48.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:44:48.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:44:48.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:44:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:44:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:44:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:44:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:44:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:44:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:44:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:44:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:44:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:44:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:44:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:44:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:18.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:45:18.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:45:18.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:45:18.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:45:18.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:45:18.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:45:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:48.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:45:48.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:45:48.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:45:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:45:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:45:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:45:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:45:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:45:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:45:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:45:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:18.195 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:46:18.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:46:18.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:46:18.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:46:18.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:46:18.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:46:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:48.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:46:48.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:46:48.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:46:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:46:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:46:48.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:46:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:46:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:46:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:46:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:46:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:18.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:47:18.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:47:18.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:47:18.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:47:18.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:47:18.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:47:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:48.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:47:48.196 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:47:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:47:48.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:47:48.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:47:48.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:47:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:47:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:47:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:47:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:47:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:18.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:48:18.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:48:18.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:48:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:48:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:48:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:48:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:48:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:48:48.197 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:48:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:48:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:48:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:48:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:48:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:48:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:48:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:48:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:18.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:49:18.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:49:18.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:49:18.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:49:18.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:49:18.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:49:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:48.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:49:48.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:49:48.198 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:49:48.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:49:48.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:49:48.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:49:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:49:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:49:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:49:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:49:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:50:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:50:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:50:18.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:50:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:50:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:50:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:48.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:50:48.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:50:48.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:50:48.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:50:48.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:50:48.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:50:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:50:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:50:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:50:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:50:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:51:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:51:18.199 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:51:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:51:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:51:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:51:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:51:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:51:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:51:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:51:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:51:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:51:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:51:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:51:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:51:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:51:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:18.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:52:18.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:52:18.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:52:18.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:52:18.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:52:18.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:52:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:52:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:52:48.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:52:48.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:52:48.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:52:48.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:52:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:52:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:52:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:52:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:52:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:18.200 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:53:18.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:53:18.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:53:18.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:53:18.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:53:18.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:53:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:48.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:53:48.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:53:48.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:53:48.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:53:48.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:53:48.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:53:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:53:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:53:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:53:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:53:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:18.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:54:18.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:54:18.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:54:18.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:54:18.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:54:18.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:54:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:48.201 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:54:48.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:54:48.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:54:48.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:54:48.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:54:48.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:54:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:54:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:54:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:54:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:54:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:55:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:55:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:55:18.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:55:18.207 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:55:18.207 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:55:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:48.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:55:48.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:55:48.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:55:48.207 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:55:48.207 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:55:48.208 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:55:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:54.728 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:54.728 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:54.728 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:55:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:55:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:55:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:55:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:56:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:56:18.202 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:56:18.208 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:56:18.208 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:56:18.208 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:56:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:56:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:56:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:56:48.208 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:56:48.208 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:56:48.209 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:56:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:56:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:56:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:56:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:56:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:18.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:57:18.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:57:18.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:57:18.209 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:57:18.209 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:57:18.209 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:57:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:57:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:57:48.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:57:48.209 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:57:48.210 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:57:48.210 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:57:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:57:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:57:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:57:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:57:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:18.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:58:18.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:58:18.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:58:18.210 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:58:18.210 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:58:18.210 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:58:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:48.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:58:48.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:58:48.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:58:48.211 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:58:48.211 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:58:48.211 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:58:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:58:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:58:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:58:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:58:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:14.723 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:18.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:59:18.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:59:18.204 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:59:18.211 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:59:18.211 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:59:18.211 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:59:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:48.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:59:48.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:59:48.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:59:48.211 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+10:59:48.212 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+10:59:48.212 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+10:59:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+10:59:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+10:59:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+10:59:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+10:59:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:18.205 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+11:00:18.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+11:00:18.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+11:00:18.212 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+11:00:18.212 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+11:00:18.212 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+11:00:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:34.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:39.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:44.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:48.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+11:00:48.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+11:00:48.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+11:00:48.212 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+11:00:48.212 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+11:00:48.212 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+11:00:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:49.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:54.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:00:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:00:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:00:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:00:59.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:01:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:01:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:01:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:01:04.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:01:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:01:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:01:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:01:09.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:01:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:01:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:01:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:01:14.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:01:18.206 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+11:01:18.207 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+11:01:18.207 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+11:01:18.213 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before cleanup stats (total=6, active=1, idle=5, waiting=0)
+11:01:18.213 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After cleanup  stats (total=6, active=1, idle=5, waiting=0)
+11:01:18.213 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+11:01:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:01:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:01:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:01:19.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:01:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:01:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:01:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:01:24.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
+11:01:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Kisumu heartbeat timeout - marking as offline
+11:01:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nairobi heartbeat timeout - marking as offline
+11:01:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Nakuru heartbeat timeout - marking as offline
+11:01:29.722 [pool-3-thread-1] WARN com.drinks.rmi.server.LoadBalancerServiceImpl -- Branch Mombasa heartbeat timeout - marking as offline
