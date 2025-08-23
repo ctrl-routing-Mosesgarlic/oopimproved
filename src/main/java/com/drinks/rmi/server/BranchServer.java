@@ -152,6 +152,7 @@ public class BranchServer {
                     PreparedStatement stockCheckStmt = conn.prepareStatement(stockCheckSql);
                     stockCheckStmt.setLong(1, branchId);
                     stockCheckStmt.setLong(2, drinkId);
+                    // stockCheckStmt.setLong(3, drinkId);                    
                     
                     ResultSet stockRs = stockCheckStmt.executeQuery();
                     

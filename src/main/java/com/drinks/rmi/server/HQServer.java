@@ -1,12 +1,12 @@
 package com.drinks.rmi.server;
 
 import com.drinks.rmi.common.DatabaseConfig;
-import com.drinks.rmi.interfaces.*;
+// import com.drinks.rmi.interfaces.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.rmi.Naming;
+// import java.rmi.Naming;
 import java.rmi.Remote;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
