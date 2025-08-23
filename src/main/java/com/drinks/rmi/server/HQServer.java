@@ -1,7 +1,7 @@
 package com.drinks.rmi.server;
 
 import com.drinks.rmi.common.DatabaseConfig;
-// import com.drinks.rmi.interfaces.*;
+import com.drinks.rmi.interfaces.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +14,9 @@ import java.rmi.server.UnicastRemoteObject;
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 import javax.rmi.ssl.SslRMIServerSocketFactory;
 import java.util.Map;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 
 /**
  * Headquarters RMI Server
@@ -23,8 +26,8 @@ public class HQServer {
     
     private static final Logger logger = LoggerFactory.getLogger(HQServer.class);
     private static final int RMI_PORT = 1099;
-    // Get server host from system property, default to localhost for backward compatibility
-    private static final String SERVER_HOST = System.getProperty("java.rmi.server.hostname", "localhost");
+    // Dynamically detect network IP address for multi-machine deployment
+    private static String SERVER_HOST;
     private static final String SERVICE_VERSION = "v1";
     
     // SSL Configuration
@@ -42,15 +45,63 @@ public class HQServer {
     private static LoadBalancerServiceImpl loadBalancerService;
     private static PaymentServiceImpl paymentService;
     
+    /**
+     * Dynamically detect the network IP address for multi-machine deployment
+     * @return The network IP address or localhost as fallback
+     */
+    private static String detectNetworkIP() {
+        try {
+            // First check if system property is set
+            String systemIP = System.getProperty("java.rmi.server.hostname");
+            if (systemIP != null && !systemIP.isEmpty()) {
+                return systemIP;
+            }
+            
+            // Try to find the first non-loopback, non-link-local IPv4 address
+            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+            while (interfaces.hasMoreElements()) {
+                NetworkInterface networkInterface = interfaces.nextElement();
+                
+                // Skip loopback and inactive interfaces
+                if (networkInterface.isLoopback() || !networkInterface.isUp()) {
+                    continue;
+                }
+                
+                Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
+                while (addresses.hasMoreElements()) {
+                    InetAddress address = addresses.nextElement();
+                    
+                    // We want IPv4, non-loopback, non-link-local addresses
+                    if (!address.isLoopbackAddress() && 
+                        !address.isLinkLocalAddress() && 
+                        address.getAddress().length == 4) { // IPv4
+                        return address.getHostAddress();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            logger.warn("Failed to detect network IP address, using localhost: {}", e.getMessage());
+        }
+        
+        // Fallback to localhost
+        return "localhost";
+    }
+    
     public static void main(String[] args) {
         try {
+            // Dynamically detect network IP address for multi-machine deployment
+            SERVER_HOST = detectNetworkIP();
+            
+            // Set RMI hostname property for multi-machine deployment
+            System.setProperty("java.rmi.server.hostname", SERVER_HOST);
+            
             // Configure SSL
             System.setProperty("javax.net.ssl.keyStore", KEYSTORE_PATH);
             System.setProperty("javax.net.ssl.keyStorePassword", STORE_PASSWORD);
             System.setProperty("javax.net.ssl.trustStore", TRUSTSTORE_PATH);
             System.setProperty("javax.net.ssl.trustStorePassword", STORE_PASSWORD);
             
-            logger.info("Starting HQ RMI Server with SSL encryption...");
+            logger.info("Starting HQ RMI Server with SSL encryption on IP: {}", SERVER_HOST);
             
             // Test database connection
             if (!DatabaseConfig.testConnection()) {

@@ -15,7 +15,7 @@ public class DatabaseConfig {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/drinkdbsales?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private static final String DB_USERNAME = "dba";
-    private static final String DB_PASSWORD = "YES";
+    private static final String DB_PASSWORD = "zIppoRah";
 
     private static HikariDataSource dataSource;
 

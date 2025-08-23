@@ -30,32 +30,6 @@
         </executions>
         <configuration>
           <mainClass>com.drinks.rmi.client.gui.DrinkBusinessGUIApp</mainClass>
-          <systemProperties>
-            <systemProperty>
-              <name>javax.net.ssl.keyStore</name>
-              <value>config/hq-keystore.jks</value>
-            </systemProperty>
-            <systemProperty>
-              <name>javax.net.ssl.keyStorePassword</name>
-              <value>securepassword123</value>
-            </systemProperty>
-            <systemProperty>
-              <name>javax.net.ssl.trustStore</name>
-              <value>config/hq-keystore.jks</value>
-            </systemProperty>
-            <systemProperty>
-              <name>javax.net.ssl.trustStorePassword</name>
-              <value>securepassword123</value>
-            </systemProperty>
-            <systemProperty>
-              <name>rmi.server.host</name>
-              <value>${rmi.server.host}</value>
-            </systemProperty>
-            <systemProperty>
-              <name>java.rmi.server.hostname</name>
-              <value>${rmi.server.host}</value>
-            </systemProperty>
-          </systemProperties>
         </configuration>
       </plugin>
       <plugin>

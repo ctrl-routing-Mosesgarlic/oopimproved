@@ -22,11 +22,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.rmi.NotBoundException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.Enumeration;
 // import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -203,10 +206,9 @@ public class CustomerDashboardController extends BaseDashboardController impleme
             
             // Determine server type and connection details based on serverInfo
             if (serverInfo.contains("Headquarters") || serverInfo.contains("HQ")) {
-                // HQ server uses SSL on port 1099
-                String serverHost = System.getProperty("rmi.server.host", "localhost");
-                SslRMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
-                registry = LocateRegistry.getRegistry(serverHost, 1099, socketFactory);
+                // HQ server - use robust SSL connection logic
+                String serverHost = getHQServerHost();
+                registry = getHQRegistry(serverHost, 1099);
                 servicePrefix = "HQ_";
                 
                 // Connect to HQ services
@@ -250,6 +252,91 @@ public class CustomerDashboardController extends BaseDashboardController impleme
             logger.error("Failed to connect to services", e);
             showError("Failed to connect to services: " + e.getMessage());
         }
+    }
+    
+    /**
+     * Get HQ server host using the same logic as LoginController
+     */
+    private String getHQServerHost() {
+        // Check specific HQ server IP property first
+        String serverHost = System.getProperty("hq.server.ip");
+        
+        // Standard RMI server host properties
+        if (serverHost == null) {
+            serverHost = System.getProperty("rmi.server.host");
+        }
+        if (serverHost == null) {
+            serverHost = System.getProperty("java.rmi.server.hostname");
+        }
+        if (serverHost == null) {
+            serverHost = System.getProperty("server.host");
+        }
+        if (serverHost == null) {
+            serverHost = System.getenv("RMI_SERVER_HOST");
+        }
+        if (serverHost == null) {
+            serverHost = detectHQServerIP();
+        }
+        
+        logger.info("Using HQ server host: {}", serverHost);
+        return serverHost;
+    }
+    
+    /**
+     * Get HQ registry with SSL fallback logic
+     */
+    private Registry getHQRegistry(String host, int port) throws Exception {
+        logger.info("Attempting SSL connection to HQ registry at {}:{}", host, port);
+        
+        // Try SSL connection first
+        try {
+            Registry registry = LocateRegistry.getRegistry(host, port, new SslRMIClientSocketFactory());
+            registry.list(); // Test the connection
+            logger.info("Successfully connected to SSL RMI registry");
+            return registry;
+            
+        } catch (Exception sslException) {
+            logger.warn("SSL registry connection failed: {}, trying fallback", sslException.getMessage());
+            
+            // Fallback: try without SSL socket factory
+            try {
+                Registry registry = LocateRegistry.getRegistry(host, port);
+                registry.list(); // Test connection
+                logger.info("Connected to registry without SSL socket factory");
+                return registry;
+            } catch (Exception fallbackException) {
+                logger.error("Both SSL and non-SSL registry connections failed");
+                throw new RuntimeException("Failed to connect to HQ registry", sslException);
+            }
+        }
+    }
+    
+    /**
+     * Detect the HQ server IP address by trying common network addresses
+     */
+    private String detectHQServerIP() {
+        try {
+            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+            while (interfaces.hasMoreElements()) {
+                NetworkInterface networkInterface = interfaces.nextElement();
+                if (networkInterface.isLoopback() || !networkInterface.isUp()) continue;
+                
+                Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
+                while (addresses.hasMoreElements()) {
+                    InetAddress address = addresses.nextElement();
+                    if (!address.isLoopbackAddress() && !address.isLinkLocalAddress() && address.getAddress().length == 4) {
+                        String detectedIP = address.getHostAddress();
+                        logger.info("Detected potential HQ server IP: {}", detectedIP);
+                        return detectedIP;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            logger.warn("Failed to detect network IP: {}", e.getMessage());
+        }
+        
+        logger.info("Using localhost as fallback for HQ server");
+        return "localhost";
     }
     
     @Override
@@ -448,7 +535,8 @@ public class CustomerDashboardController extends BaseDashboardController impleme
                     }
                 }
                 
-                Registry registry = LocateRegistry.getRegistry(host, port, new SslRMIClientSocketFactory());
+                // Use robust SSL fallback logic from BaseDashboardController
+                Registry registry = getHQRegistry(host, port);
                 
                 // Connect to payment service based on server info
                 String prefix = "HQ_"; // Default to HQ

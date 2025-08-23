@@ -14,11 +14,14 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.RMIClientSocketFactory;
+import java.util.Enumeration;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
@@ -140,10 +143,33 @@ public class LoginController implements Initializable {
                 String serviceName;
                 
                 if (port == 1099) {
-                    // HQ server uses SSL
-                    RMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
-                    registry = LocateRegistry.getRegistry(host, port, socketFactory);
-                    serviceName = "HQ_AuthService";
+                    // HQ server uses SSL registry
+                    logger.info("Attempting SSL connection to HQ registry at {}:{}", host, port);
+                    
+                    // Try SSL connection first
+                    try {
+                        RMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
+                        registry = LocateRegistry.getRegistry(host, port, socketFactory);
+                        serviceName = "HQ_AuthService";
+                        
+                        // Test the registry connection
+                        registry.list();
+                        logger.info("Successfully connected to SSL RMI registry");
+                        
+                    } catch (Exception sslException) {
+                        logger.warn("SSL registry connection failed: {}, trying fallback", sslException.getMessage());
+                        
+                        // Fallback: try without SSL socket factory (in case registry is not SSL-enabled)
+                        try {
+                            registry = LocateRegistry.getRegistry(host, port);
+                            serviceName = "HQ_AuthService";
+                            registry.list(); // Test connection
+                            logger.info("Connected to registry without SSL socket factory");
+                        } catch (Exception fallbackException) {
+                            logger.error("Both SSL and non-SSL registry connections failed");
+                            throw new RuntimeException("Failed to connect to HQ registry", sslException);
+                        }
+                    }
                 } else {
                     // Branch servers use regular RMI with branch-specific service names
                     registry = LocateRegistry.getRegistry(host, port);
@@ -151,8 +177,14 @@ public class LoginController implements Initializable {
                     serviceName = branchName.toUpperCase() + "_AuthService";
                 }
                 
-                return (AuthService) registry.lookup(serviceName);
+                // Lookup the service
+                logger.info("Looking up service: {}", serviceName);
+                AuthService service = (AuthService) registry.lookup(serviceName);
+                logger.info("Successfully obtained AuthService reference");
+                return service;
+                
             } catch (Exception e) {
+                logger.error("Failed to create AuthService connection to {}:{}", host, port, e);
                 throw new RuntimeException("Failed to create AuthService connection", e);
             }
         });
@@ -177,7 +209,17 @@ public class LoginController implements Initializable {
         }
         
         // Get server hostname from system property with multiple fallbacks
-        String serverHost = System.getProperty("rmi.server.host");
+        String serverHost = null;
+        
+        // For HQ server, check specific HQ server IP property first
+        if ("Headquarters (HQ)".equals(serverType)) {
+            serverHost = System.getProperty("hq.server.ip");
+        }
+        
+        // Standard RMI server host properties
+        if (serverHost == null) {
+            serverHost = System.getProperty("rmi.server.host");
+        }
         if (serverHost == null) {
             serverHost = System.getProperty("java.rmi.server.hostname");
         }
@@ -189,7 +231,12 @@ public class LoginController implements Initializable {
             serverHost = System.getenv("RMI_SERVER_HOST");
         }
         if (serverHost == null) {
-            serverHost = "localhost";
+            // For HQ server, try to detect the network IP or use a default
+            if ("Headquarters (HQ)".equals(serverType)) {
+                serverHost = detectHQServerIP();
+            } else {
+                serverHost = "localhost";
+            }
         }
         
         logger.info("System property rmi.server.host: {}", System.getProperty("rmi.server.host"));
@@ -272,5 +319,36 @@ public class LoginController implements Initializable {
             case 1103: return "Nairobi";
             default: return "Branch";
         }
+    }
+    
+    /**
+     * Detect the HQ server IP address by trying common network addresses
+     * This method attempts to find the actual network IP of the HQ server
+     */
+    private String detectHQServerIP() {
+        // First, try to detect the local machine's network IP (for same-machine testing)
+        try {
+            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+            while (interfaces.hasMoreElements()) {
+                NetworkInterface networkInterface = interfaces.nextElement();
+                if (networkInterface.isLoopback() || !networkInterface.isUp()) continue;
+                
+                Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
+                while (addresses.hasMoreElements()) {
+                    InetAddress address = addresses.nextElement();
+                    if (!address.isLoopbackAddress() && !address.isLinkLocalAddress() && address.getAddress().length == 4) {
+                        String detectedIP = address.getHostAddress();
+                        logger.info("Detected potential HQ server IP: {}", detectedIP);
+                        return detectedIP;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            logger.warn("Failed to detect network IP: {}", e.getMessage());
+        }
+        
+        // Fallback to localhost for development
+        logger.info("Using localhost as fallback for HQ server");
+        return "localhost";
     }
 }

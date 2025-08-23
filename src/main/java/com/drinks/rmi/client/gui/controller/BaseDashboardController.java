@@ -14,8 +14,11 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.Enumeration;
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 
 /**
@@ -95,19 +98,17 @@ public abstract class BaseDashboardController implements DashboardController {
                       currentUser.getRole().equals("globalmanager") ||
                       currentUser.getRole().equals("auditor")) {
                 
-                // HQ roles connect to HQ server with SSL
-                String serverHost = System.getProperty("rmi.server.host", "localhost");
-                SslRMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
-                registry = LocateRegistry.getRegistry(serverHost, 1099, socketFactory);
+                // HQ roles connect to HQ server with robust SSL connection logic
+                String serverHost = getHQServerHost();
+                registry = getHQRegistry(serverHost, 1099);
                 servicePrefix = "HQ_";
                 
                 logger.info("Connecting to HQ server with SSL");
                 
             } else {
                 // Default to HQ for unknown cases
-                String serverHost = System.getProperty("rmi.server.host", "localhost");
-                SslRMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
-                registry = LocateRegistry.getRegistry(serverHost, 1099, socketFactory);
+                String serverHost = getHQServerHost();
+                registry = getHQRegistry(serverHost, 1099);
                 servicePrefix = "HQ_";
             }
             
@@ -125,6 +126,91 @@ public abstract class BaseDashboardController implements DashboardController {
             logger.error("Failed to connect to services", e);
             showError("Failed to connect to services: " + e.getMessage());
         }
+    }
+    
+    /**
+     * Get HQ server host using the same logic as LoginController
+     */
+    private String getHQServerHost() {
+        // Check specific HQ server IP property first
+        String serverHost = System.getProperty("hq.server.ip");
+        
+        // Standard RMI server host properties
+        if (serverHost == null) {
+            serverHost = System.getProperty("rmi.server.host");
+        }
+        if (serverHost == null) {
+            serverHost = System.getProperty("java.rmi.server.hostname");
+        }
+        if (serverHost == null) {
+            serverHost = System.getProperty("server.host");
+        }
+        if (serverHost == null) {
+            serverHost = System.getenv("RMI_SERVER_HOST");
+        }
+        if (serverHost == null) {
+            serverHost = detectHQServerIP();
+        }
+        
+        logger.info("Using HQ server host: {}", serverHost);
+        return serverHost;
+    }
+    
+    /**
+     * Get HQ registry with SSL fallback logic
+     */
+    private Registry getHQRegistry(String host, int port) throws Exception {
+        logger.info("Attempting SSL connection to HQ registry at {}:{}", host, port);
+        
+        // Try SSL connection first
+        try {
+            Registry registry = LocateRegistry.getRegistry(host, port, new SslRMIClientSocketFactory());
+            registry.list(); // Test the connection
+            logger.info("Successfully connected to SSL RMI registry");
+            return registry;
+            
+        } catch (Exception sslException) {
+            logger.warn("SSL registry connection failed: {}, trying fallback", sslException.getMessage());
+            
+            // Fallback: try without SSL socket factory
+            try {
+                Registry registry = LocateRegistry.getRegistry(host, port);
+                registry.list(); // Test connection
+                logger.info("Connected to registry without SSL socket factory");
+                return registry;
+            } catch (Exception fallbackException) {
+                logger.error("Both SSL and non-SSL registry connections failed");
+                throw new RuntimeException("Failed to connect to HQ registry", sslException);
+            }
+        }
+    }
+    
+    /**
+     * Detect the HQ server IP address by trying common network addresses
+     */
+    private String detectHQServerIP() {
+        try {
+            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+            while (interfaces.hasMoreElements()) {
+                NetworkInterface networkInterface = interfaces.nextElement();
+                if (networkInterface.isLoopback() || !networkInterface.isUp()) continue;
+                
+                Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
+                while (addresses.hasMoreElements()) {
+                    InetAddress address = addresses.nextElement();
+                    if (!address.isLoopbackAddress() && !address.isLinkLocalAddress() && address.getAddress().length == 4) {
+                        String detectedIP = address.getHostAddress();
+                        logger.info("Detected potential HQ server IP: {}", detectedIP);
+                        return detectedIP;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            logger.warn("Failed to detect network IP: {}", e.getMessage());
+        }
+        
+        logger.info("Using localhost as fallback for HQ server");
+        return "localhost";
     }
     
     /**

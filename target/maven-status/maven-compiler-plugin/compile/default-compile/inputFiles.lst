@@ -1,58 +1,56 @@
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/BranchServer.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/BranchStaffDashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/UserDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/security/RoleBasedAccessControl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/CustomerReportDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/NotificationCallbackImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/BaseDashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/NotificationDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/BranchManagerDashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/OrderService.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/NotificationService.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/ReportService.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/DrinkService.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/NotificationServiceImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/test/MySQLConnectionTest.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/PaymentDialogController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/common/DatabaseConfig.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/CustomerSupportDashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/LoadBalancerServiceImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/NotificationCallback.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/StockReportDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/StockDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/util/DatabaseSeeder.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/PaymentServiceImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/OrderItemDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/DashboardRouter.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/PaymentDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/CustomerDashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/PaymentResultDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/MinimalTestController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/test/HikariConnectionTest.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/AuthService.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/AdminDashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/common/DatabaseConfigSimple.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/OrderServiceImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/BranchDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/DrinkServiceImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/DrinkPopularityReportDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/DrinkBusinessClient.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/StockService.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/AuditorDashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/util/UserRoleUpdater.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/common/DatabaseConfigTest.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/StockServiceImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/LoginController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/ReportServiceImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/PaymentService.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/HQServerSimple.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/OrderDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/SalesReportDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/DashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/DrinkDTO.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/AuthServiceImpl.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/interfaces/LoadBalancerService.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/DrinkBusinessGUIApp.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/client/gui/controller/GlobalManagerDashboardController.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/server/HQServer.java
-/home/mark-otinga/Desktop/oop2 project improved/oopimproved/src/main/java/com/drinks/rmi/dto/LoginHistoryDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/StockServiceImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/HQServerSimple.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/common/DatabaseConfig.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/StockService.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/BranchDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/BranchServer.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/MinimalTestController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/SalesReportDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/CustomerDashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/DrinkServiceImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/HQServer.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/NotificationDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/NotificationCallbackImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/PaymentResultDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/DrinkBusinessGUIApp.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/AuthServiceImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/AuthService.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/StockReportDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/PaymentDialogController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/PaymentService.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/LoadBalancerService.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/DrinkDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/BranchManagerDashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/CustomerReportDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/test/HikariConnectionTest.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/DashboardRouter.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/OrderDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/UserDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/security/RoleBasedAccessControl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/NotificationServiceImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/OrderItemDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/DrinkPopularityReportDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/GlobalManagerDashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/PaymentServiceImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/NotificationCallback.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/BaseDashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/util/DatabaseSeeder.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/BranchStaffDashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/CustomerSupportDashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/AuditorDashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/DrinkBusinessClient.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/util/UserRoleUpdater.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/DashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/OrderService.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/OrderServiceImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/LoadBalancerServiceImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/NotificationService.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/AdminDashboardController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/server/ReportServiceImpl.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/DrinkService.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/LoginHistoryDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/StockDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/client/gui/controller/LoginController.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/test/MySQLConnectionTest.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/dto/PaymentDTO.java
+/home/patch_moses_garlic/Documents/school stuff/year two(2)/Sem1/OOP 2/project/OOP2-project-1-1/project/drink-business-rmi/src/main/java/com/drinks/rmi/interfaces/ReportService.java

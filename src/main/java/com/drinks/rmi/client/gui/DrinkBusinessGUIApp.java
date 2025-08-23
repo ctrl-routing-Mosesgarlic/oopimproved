@@ -57,15 +57,35 @@ public class DrinkBusinessGUIApp extends Application {
     public static void main(String[] args) {
         logger.info("Launching JavaFX GUI Application...");
         
-        // Disable SSL certificate validation for development environment
+        // Configure SSL properties for RMI connections
         System.setProperty("javax.net.ssl.trustStore", "config/hq-keystore.jks");
         System.setProperty("javax.net.ssl.trustStorePassword", "securepassword123");
         System.setProperty("javax.net.ssl.keyStore", "config/hq-keystore.jks");
         System.setProperty("javax.net.ssl.keyStorePassword", "securepassword123");
         
-        // Disable hostname verification for self-signed certificates
+        // SSL configuration for development with self-signed certificates
         System.setProperty("com.sun.net.ssl.checkRevocation", "false");
         System.setProperty("sun.security.ssl.allowUnsafeRenegotiation", "true");
+        System.setProperty("javax.net.ssl.trustStoreType", "JKS");
+        System.setProperty("javax.net.ssl.keyStoreType", "JKS");
+        
+        // Allow users to specify HQ server IP via command line arguments or system properties
+        String hqServerIP = System.getProperty("hq.server.ip");
+        if (hqServerIP == null && args.length > 0) {
+            // Check if first argument is an IP address for HQ server
+            if (args[0].matches("\\d+\\.\\d+\\.\\d+\\.\\d+")) {
+                hqServerIP = args[0];
+                System.setProperty("hq.server.ip", hqServerIP);
+                logger.info("Using HQ server IP from command line: {}", hqServerIP);
+            }
+        }
+        
+        // Set RMI hostname if HQ server IP is specified
+        if (hqServerIP != null) {
+            System.setProperty("java.rmi.server.hostname", hqServerIP);
+            System.setProperty("rmi.server.host", hqServerIP);
+            logger.info("Set RMI server hostname to: {}", hqServerIP);
+        }
         
         launch(args);
     }

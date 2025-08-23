@@ -12,6 +12,13 @@ import com.drinks.rmi.dto.SalesReportDTO;
 import com.drinks.rmi.dto.StockReportDTO;
 import com.drinks.rmi.dto.UserDTO;
 import java.rmi.registry.Registry;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.RemoteException;
+import java.rmi.server.RMIClientSocketFactory;
+import javax.rmi.ssl.SslRMIClientSocketFactory;
+import java.net.Inet4Address;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -27,12 +34,15 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.net.URL;
 import java.rmi.registry.LocateRegistry;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -285,7 +295,7 @@ public class AdminDashboardController implements DashboardController, Initializa
         this.authService = authService;
         this.serverInfo = serverInfo;
         
-        // Connect to other services
+        // Connect to services
         connectToServices();
         
         // Initialize dashboard
@@ -294,8 +304,9 @@ public class AdminDashboardController implements DashboardController, Initializa
     
     private void connectToServices() {
         try {
-            String serverHost = System.getProperty("rmi.server.host", "localhost");
-            Registry registry = LocateRegistry.getRegistry(serverHost, 1099, new javax.rmi.ssl.SslRMIClientSocketFactory());
+            // Use robust SSL connection logic
+            String serverHost = getHQServerHost();
+            Registry registry = getHQRegistry(serverHost, 1099);
             
             drinkService = (DrinkService) registry.lookup("HQ_DrinkService");
             reportService = (ReportService) registry.lookup("HQ_ReportService");
@@ -311,6 +322,87 @@ public class AdminDashboardController implements DashboardController, Initializa
         }
     }
     
+    private String getHQServerHost() {
+        // Check system property first
+        String host = System.getProperty("hq.server.ip");
+        if (host != null && !host.trim().isEmpty()) {
+            logger.info("Using HQ server IP from system property: {}", host);
+            return host.trim();
+        }
+        
+        // Check environment variable
+        host = System.getenv("HQ_SERVER_IP");
+        if (host != null && !host.trim().isEmpty()) {
+            logger.info("Using HQ server IP from environment variable: {}", host);
+            return host.trim();
+        }
+        
+        // Auto-detect network IP
+        host = detectHQServerIP();
+        if (host != null) {
+            logger.info("Using auto-detected HQ server IP: {}", host);
+            return host;
+        }
+        
+        // Fallback to localhost
+        logger.warn("No HQ server IP found, falling back to localhost");
+        return "localhost";
+    }
+    
+    private String detectHQServerIP() {
+        try {
+            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+            while (interfaces.hasMoreElements()) {
+                NetworkInterface networkInterface = interfaces.nextElement();
+                if (networkInterface.isLoopback() || !networkInterface.isUp()) {
+                    continue;
+                }
+                
+                Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
+                while (addresses.hasMoreElements()) {
+                    InetAddress address = addresses.nextElement();
+                    if (address instanceof Inet4Address && !address.isLoopbackAddress()) {
+                        String ip = address.getHostAddress();
+                        logger.debug("Found potential HQ server IP: {}", ip);
+                        return ip;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            logger.error("Failed to detect HQ server IP", e);
+        }
+        return null;
+    }
+    
+    private Registry getHQRegistry(String host, int port) throws RemoteException {
+        logger.info("Attempting to connect to HQ registry at {}:{}", host, port);
+        
+        // Try SSL connection first
+        try {
+            RMIClientSocketFactory socketFactory = new SslRMIClientSocketFactory();
+            Registry registry = LocateRegistry.getRegistry(host, port, socketFactory);
+            
+            // Test the registry connection
+            registry.list();
+            logger.info("Successfully connected to SSL RMI registry");
+            return registry;
+            
+        } catch (Exception sslException) {
+            logger.warn("SSL registry connection failed: {}, trying fallback", sslException.getMessage());
+            
+            // Fallback: try without SSL socket factory
+            try {
+                Registry registry = LocateRegistry.getRegistry(host, port);
+                registry.list(); // Test connection
+                logger.info("Connected to registry without SSL socket factory");
+                return registry;
+            } catch (Exception fallbackException) {
+                logger.error("Both SSL and non-SSL registry connections failed");
+                throw new RemoteException("Failed to connect to HQ registry", sslException);
+            }
+        }
+    }
+
     @Override
     public void initializeDashboard() {
         welcomeLabel.setText("Welcome, " + currentUser.getUsername() + " (" + currentUser.getRole() + ")");
@@ -1140,7 +1232,7 @@ public class AdminDashboardController implements DashboardController, Initializa
         }
     }
     
-    private void showError(String message) {
+    protected void showError(String message) {
         if (statusLabel != null) {
             statusLabel.setText(message);
             statusLabel.setStyle("-fx-text-fill: red;");
@@ -1153,7 +1245,7 @@ public class AdminDashboardController implements DashboardController, Initializa
         alert.showAndWait();
     }
     
-    private void showSuccess(String message) {
+    protected void showSuccess(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
         alert.setHeaderText(null);

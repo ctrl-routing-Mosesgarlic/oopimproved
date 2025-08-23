@@ -24,7 +24,7 @@ public class AuthServiceImpl extends UnicastRemoteObject implements AuthService 
     private static final Logger logger = LoggerFactory.getLogger(AuthServiceImpl.class);
     
     public AuthServiceImpl() throws RemoteException {
-        super(1100, new SslRMIClientSocketFactory(), new SslRMIServerSocketFactory());
+        super(1101, new SslRMIClientSocketFactory(), new SslRMIServerSocketFactory());
     }
     
     @Override
