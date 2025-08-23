@@ -1,0 +1,98 @@
+package com.drinks.test;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.sql.DataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import java.sql.ResultSet;
+
+public class HikariConnectionTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(HikariConnectionTest.class);
+    
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/drinkdbsales?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    private static final String DB_USERNAME = "dba";
+    private static final String DB_PASSWORD = "YES";
+    
+    private static HikariDataSource dataSource;
+    
+    static {
+        try {
+            HikariConfig config = new HikariConfig();
+            config.setJdbcUrl(DB_URL);
+            config.setUsername(DB_USERNAME);
+            config.setPassword(DB_PASSWORD);
+            config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+            
+            // Connection pool settings
+            config.setMaximumPoolSize(20);
+            config.setMinimumIdle(5);
+            config.setConnectionTimeout(30000);
+            config.setIdleTimeout(600000);
+            config.setMaxLifetime(1800000);
+            config.setConnectionTestQuery("SELECT 1");
+            config.setValidationTimeout(5000);
+            
+            dataSource = new HikariDataSource(config);
+            logger.info("Database connection pool initialized successfully");
+            
+        } catch (Exception e) {
+            logger.error("Failed to initialize database connection pool", e);
+            throw new RuntimeException("Database initialization failed", e);
+        }
+    }
+    
+    public static Connection getConnection() throws SQLException {
+        if (dataSource == null) {
+            throw new SQLException("DataSource is not initialized");
+        }
+        return dataSource.getConnection();
+    }
+    
+    public static void close() {
+        if (dataSource != null && !dataSource.isClosed()) {
+            dataSource.close();
+            logger.info("Database connection pool closed");
+        }
+    }
+    
+    public static boolean testConnection() {
+        try (Connection connection = getConnection()) {
+            return connection.isValid(5);
+        } catch (SQLException e) {
+            logger.error("Database connection test failed", e);
+            return false;
+        }
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Testing database connection with HikariCP...");
+        
+        try {
+            if (testConnection()) {
+                System.out.println("✅ Database connection successful!");
+                
+                try (Connection conn = getConnection();
+                     Statement stmt = conn.createStatement();
+                     ResultSet rs = stmt.executeQuery("SHOW TABLES;")) {
+                    
+                    System.out.println("\nTables in drinkdbsales:");
+                    while (rs.next()) {
+                        System.out.println(" - " + rs.getString(1));
+                    }
+                }
+            } else {
+                System.out.println("❌ Database connection failed!");
+            }
+        } catch (SQLException e) {
+            System.err.println("❌ SQL Error: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            close();
+        }
+    }
+}

@@ -47,6 +47,14 @@
               <name>javax.net.ssl.trustStorePassword</name>
               <value>securepassword123</value>
             </systemProperty>
+            <systemProperty>
+              <name>rmi.server.host</name>
+              <value>${rmi.server.host}</value>
+            </systemProperty>
+            <systemProperty>
+              <name>java.rmi.server.hostname</name>
+              <value>${rmi.server.host}</value>
+            </systemProperty>
           </systemProperties>
         </configuration>
       </plugin>

@@ -268,7 +268,8 @@ run_gui() {
     # Set system properties for GUI (both old and new property names for compatibility)
     export JAVA_OPTS="-Djava.rmi.server.hostname=$server_ip -Drmi.server.host=$server_ip"
     
-    mvn javafx:run -Djava.rmi.server.hostname="$server_ip" -Drmi.server.host="$server_ip" >> "$RECORD_LOG" 2>> "$ERROR_LOG"
+    export RMI_SERVER_HOST="$server_ip"
+    mvn javafx:run -Drmi.server.host="$server_ip" -Djava.rmi.server.hostname="$server_ip" -Djavax.net.ssl.keyStore=config/hq-keystore.jks -Djavax.net.ssl.keyStorePassword=securepassword123 -Djavax.net.ssl.trustStore=config/hq-keystore.jks -Djavax.net.ssl.trustStorePassword=securepassword123 >> "$RECORD_LOG" 2>> "$ERROR_LOG"
 }
 
 # Function to select branch and run it directly

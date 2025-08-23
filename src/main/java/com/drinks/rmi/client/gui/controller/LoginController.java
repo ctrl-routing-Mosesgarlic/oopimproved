@@ -176,8 +176,25 @@ public class LoginController implements Initializable {
             }
         }
         
-        // Get server hostname from system property, default to localhost
-        String serverHost = System.getProperty("rmi.server.host", "localhost");
+        // Get server hostname from system property with multiple fallbacks
+        String serverHost = System.getProperty("rmi.server.host");
+        if (serverHost == null) {
+            serverHost = System.getProperty("java.rmi.server.hostname");
+        }
+        if (serverHost == null) {
+            serverHost = System.getProperty("server.host");
+        }
+        if (serverHost == null) {
+            // Check environment variable as fallback
+            serverHost = System.getenv("RMI_SERVER_HOST");
+        }
+        if (serverHost == null) {
+            serverHost = "localhost";
+        }
+        
+        logger.info("System property rmi.server.host: {}", System.getProperty("rmi.server.host"));
+        logger.info("System property java.rmi.server.hostname: {}", System.getProperty("java.rmi.server.hostname"));
+        logger.info("Environment RMI_SERVER_HOST: {}", System.getenv("RMI_SERVER_HOST"));
         
         logger.info("Connecting to {} on {}:{}", serverType, serverHost, port);
         

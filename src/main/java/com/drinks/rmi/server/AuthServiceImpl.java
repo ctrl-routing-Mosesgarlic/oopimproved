@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import javax.rmi.ssl.SslRMIClientSocketFactory;
+import javax.rmi.ssl.SslRMIServerSocketFactory;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public class AuthServiceImpl extends UnicastRemoteObject implements AuthService 
     private static final Logger logger = LoggerFactory.getLogger(AuthServiceImpl.class);
     
     public AuthServiceImpl() throws RemoteException {
-        super();
+        super(1100, new SslRMIClientSocketFactory(), new SslRMIServerSocketFactory());
     }
     
     @Override
